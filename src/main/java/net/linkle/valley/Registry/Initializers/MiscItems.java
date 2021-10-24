@@ -42,6 +42,7 @@ public class MiscItems {
     public static final Item BEAR_SPAWN_EGG = new SpawnEggItem(Entities.BEAR, 0x56290D, 0x120802, new Item.Settings().group(MISC_GROUP));
     public static final Item DUCK_SPAWN_EGG = new SpawnEggItem(Entities.DUCK, 0x5B3200, 0x445B22, new Item.Settings().group(MISC_GROUP));
     public static final Item DUCK_EGG = new MiscItemBase((new Item.Settings()).maxCount(16).group(MISC_GROUP));
+    public static final Item GRAPPLING_HOOK = new GrapplingHook(new Item.Settings().maxCount(1));
 
     public static void initialize() {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bomb_bag"), BOMB_BAG);
@@ -70,5 +71,6 @@ public class MiscItems {
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "growth_totem"), G_TOTEM);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "bear_spawn_egg"), BEAR_SPAWN_EGG);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "duck_spawn_egg"), DUCK_SPAWN_EGG);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "grappling_hook"), GRAPPLING_HOOK);
     }
 }
