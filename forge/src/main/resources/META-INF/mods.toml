@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[@FORGE_LOADER_MAJOR@,)"
+#issueTrackerURL = ""
+license = "CC-BY-NC-SA"
+
+[[mods]]
+modId = "valley"
+version = "${version}"
+displayName = "ValleyCraft"
+authors = "Linkle#2933, AndEditor7"
+description = '''
+This is an example description! Tell everyone what your mod is about!
+'''
+#logoFile = ""
+
+[[dependencies.valley]]
+modId = "forge"
+mandatory = true
+versionRange = "[@FORGE_LOADER_MAJOR@,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.valley]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[@MINECRAFT@,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.valley]]
+modId = "architectury"
+mandatory = true
+versionRange = "[@ARCHITECTURY_API@,)"
+ordering = "AFTER"
+side = "BOTH"

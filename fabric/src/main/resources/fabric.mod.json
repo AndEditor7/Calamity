@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "valley",
+  "version": "${version}",
+  
+  "name": "ValleyCraft",
+  "description": "",
+  "authors": [
+    "Linkle#2933"
+  ],
+  "contact": {
+    "homepage": "https://github.com/l1nkl3/ValleyCraft-Wiki",
+    "sources": "https://github.com/l1nkl3/Calamity"
+  },
+  
+  "license": "CC-BY-NC-SA",
+  "icon": "assets/valley/icon/icon.png",
+  
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.linkle.valley.fabric.ValleyFabric"
+    ]
+  },
+  "mixins": [
+	"valley.mixins.json"
+  ],
+  
+  "depends": {
+    "fabric": ">=0.11.3",
+    "minecraft": ">=1.17.1",
+    "architectury": ">=2.6.35",
+	"java": ">=16"
+  }
+}
