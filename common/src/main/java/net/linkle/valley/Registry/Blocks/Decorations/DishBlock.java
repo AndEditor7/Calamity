@@ -1,6 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Decorations;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.linkle.valley.Registry.Commons.HorizontalWithWaterBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -20,8 +19,7 @@ public class DishBlock extends HorizontalWithWaterBlock {
     protected static final VoxelShape NORTH_SHAPE;
 
     public DishBlock() {
-        super(FabricBlockSettings.of(Material.WOOD)
-                .breakByHand(true)
+        super(Block.Settings.of(Material.WOOD)
                 .sounds(BlockSoundGroup.WOOD)
                 .strength(0.5f, 2.5f));
         setDefaultState(stateManager.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));
@@ -29,7 +27,7 @@ public class DishBlock extends HorizontalWithWaterBlock {
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        switch ((Direction)state.get(FACING)) {
+        switch (state.get(FACING)) {
             case NORTH:
                 return NORTH_SHAPE;
             case SOUTH:

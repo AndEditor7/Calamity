@@ -1,6 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Decorations;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.BlockPos;
@@ -12,8 +11,7 @@ public class RoundedBarrelBlock extends BarrelBlock {
     protected static final VoxelShape BARREL_SHAPE;
 
     public RoundedBarrelBlock() {
-        super(FabricBlockSettings.of(Material.WOOD)
-                .breakByHand(true)
+        super(Settings.of(Material.WOOD)
                 .sounds(BlockSoundGroup.WOOD)
                 .strength(1f, 2.5f));
     }

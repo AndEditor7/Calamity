@@ -1,6 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Plants;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.pathing.NavigationType;
@@ -25,8 +24,7 @@ public class CactusBlock extends HorizontalFacingBlock {
     private static final VoxelShape OUTLINE_SHAPE = Block.createCuboidShape(1, 0, 1, 15, 16, 15);
 
     public CactusBlock() {
-        super(FabricBlockSettings.of(Material.LEAVES).nonOpaque()
-                .breakByHand(true)
+        super(Settings.of(Material.LEAVES).nonOpaque()
                 .sounds(BlockSoundGroup.BAMBOO_SAPLING)
                 .strength(0.4f, 0.1f));
         setDefaultState(stateManager.getDefaultState().with(FACING, Direction.NORTH));

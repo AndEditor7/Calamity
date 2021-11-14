@@ -22,7 +22,7 @@ import net.minecraft.resource.SynchronousResourceReloader;
 @Environment(EnvType.CLIENT)
 @Mixin(EntityRenderDispatcher.class)
 abstract class LaserEntityMixin implements SynchronousResourceReloader {
-	
+	/*
 	@Inject(method = "shouldRender()Z", at = @At("HEAD"), cancellable = true)
 	<E extends Entity> void shouldRender(E entity, Frustum frustum, double x, double y, double z, CallbackInfoReturnable<Boolean> info) {
 		if (entity instanceof LivingEntity living && living.isHolding(MiscItems.REDSTONE_WAND)) {
@@ -63,4 +63,5 @@ abstract class LaserEntityMixin implements SynchronousResourceReloader {
 			matrices.pop();
 		}
 	}
+	*/
 }

@@ -1,6 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Decorations;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.linkle.valley.Registry.Commons.HorizontalWithWaterBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -21,8 +20,7 @@ public class CrestBlock extends HorizontalWithWaterBlock {
     protected static final VoxelShape NORTH_SHAPE;
 
     public CrestBlock() {
-        super(FabricBlockSettings.of(Material.WOOD)
-                .breakByHand(true)
+        super(Block.Settings.of(Material.WOOD)
                 .sounds(BlockSoundGroup.WOOD)
                 .strength(1.0f, 0.5f));
         setDefaultState(stateManager.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));

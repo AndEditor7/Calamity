@@ -1,7 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Plants.Decorative;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -19,9 +17,7 @@ public class VineBlock extends Block {
     protected static final VoxelShape SHAPE = Block.createCuboidShape(2.0D, -7.0D, 2.0D, 14.0D, 16.0D, 14.0D);
 
     public VineBlock() {
-        super(FabricBlockSettings.of(Material.LEAVES)
-                .breakByTool(FabricToolTags.SHEARS)
-                .breakByHand(true)
+        super(Settings.of(Material.LEAVES)
                 .sounds(BlockSoundGroup.WEEPING_VINES_LOW_PITCH)
                 .strength(0, 0.5f));
     }

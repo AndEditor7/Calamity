@@ -1,6 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Decorations;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.linkle.valley.Registry.Commons.DirectionBlockWithWater;
 import net.minecraft.block.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
@@ -19,8 +18,7 @@ public class WreathBlock extends DirectionBlockWithWater {
     protected static final VoxelShape DOWN_SHAPE;
 
     public WreathBlock() {
-        super(FabricBlockSettings.of(Material.LEAVES)
-                .breakByHand(true)
+        super(Settings.of(Material.LEAVES)
                 .sounds(BlockSoundGroup.GRASS)
                 .strength(0.5f, 0.5f));
         setDefaultState(stateManager.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));

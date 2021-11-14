@@ -1,7 +1,6 @@
 package net.linkle.valley.Registry.Initializers.ConfiguredFeatures;
 
-import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import dev.architectury.registry.level.biome.BiomeModifications;
 import net.linkle.valley.ValleyMain;
 import net.linkle.valley.Registry.Initializers.ConfiguredFeatures.Gen.CavePatchConfig;
 import net.linkle.valley.Registry.Initializers.ConfiguredFeatures.Gen.CavePatchFeature;
@@ -34,6 +33,6 @@ public class CaveFeatures {
 
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, glowPatch.getValue(), GLOW_PATCH_CONFIG.decorate(spread));
 
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_DECORATION, glowPatch);
+        //BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_DECORATION, glowPatch);
     }
 }

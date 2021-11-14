@@ -1,6 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Decorations;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.linkle.valley.Registry.Commons.HorizontalWithWaterBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -20,10 +19,9 @@ public class LanternBlock extends HorizontalWithWaterBlock {
     private final boolean emitsRedstone;
     
     public LanternBlock(int luminance, boolean emitsRedstone) {
-        super(FabricBlockSettings.of(Material.METAL)
-                .breakByHand(true)
-                .sounds(BlockSoundGroup.CHAIN).luminance(luminance)
-                .strength(1f, 3.5f));
+        super(Settings.of(Material.METAL)
+                .sounds(BlockSoundGroup.CHAIN)
+                .strength(1f, 3.5f).luminance(s->luminance));
         setDefaultState(stateManager.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));
         this.emitsRedstone = emitsRedstone;
     }

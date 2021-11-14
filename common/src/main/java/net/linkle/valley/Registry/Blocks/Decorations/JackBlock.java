@@ -1,17 +1,14 @@
 package net.linkle.valley.Registry.Blocks.Decorations;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
+import net.minecraft.block.Block;
 import net.minecraft.block.CarvedPumpkinBlock;
 import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
 
 public class JackBlock extends CarvedPumpkinBlock {
     public JackBlock() {
-        super(FabricBlockSettings.of(Material.GOURD)
-                .breakByTool(FabricToolTags.AXES)
-                .breakByHand(true).luminance(15)
+        super(Block.Settings.of(Material.GOURD)
                 .sounds(BlockSoundGroup.WOOD)
-                .strength(1f, 1.0f));
+                .strength(1f, 1.0f).luminance(s->15));
     }
 }

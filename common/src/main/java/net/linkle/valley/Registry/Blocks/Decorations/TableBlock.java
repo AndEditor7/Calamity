@@ -1,6 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Decorations;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.linkle.valley.Registry.Commons.HorizontalWithWaterBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -17,8 +16,7 @@ public class TableBlock extends HorizontalWithWaterBlock {
     protected static final VoxelShape SHAPE = Block.createCuboidShape(1, 0, 1, 15, 16, 15);
 
     public TableBlock() {
-        super(FabricBlockSettings.of(Material.WOOD)
-                .breakByHand(true)
+        super(Settings.of(Material.WOOD)
                 .sounds(BlockSoundGroup.WOOD)
                 .strength(1f, 2f));
         setDefaultState(stateManager.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));

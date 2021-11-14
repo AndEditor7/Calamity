@@ -24,7 +24,7 @@ public class MossVinesBlock extends AbstractPlantStemBlock {
     
     @Override
     protected Block getPlant() {
-        return Plants.MOSSY_VINE_PLANT;
+        return Plants.MOSSY_VINE_PLANT.get();
     }
 
     @Override

@@ -1,6 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Decorations;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.linkle.valley.Registry.Commons.DirectionBlockWithWater;
 import net.minecraft.block.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
@@ -15,8 +14,7 @@ public class CicadaBlock extends DirectionBlockWithWater {
     protected static final VoxelShape SHAPE = Block.createCuboidShape(5, 0, 5, 11, 2, 11);
 
     public CicadaBlock() {
-        super(FabricBlockSettings.of(Material.WOOD)
-                .breakByHand(true)
+        super(Block.Settings.of(Material.WOOD)
                 .sounds(BlockSoundGroup.STONE)
                 .strength(0.5f, 2.5f));
         setDefaultState(stateManager.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));

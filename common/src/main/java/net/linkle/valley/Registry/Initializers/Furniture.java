@@ -1,16 +1,11 @@
 package net.linkle.valley.Registry.Initializers;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.registry.FuelRegistry;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
+import dev.architectury.registry.registries.RegistrySupplier;
+import net.linkle.valley.ValleyMain;
 import net.linkle.valley.Registry.Blocks.Decorations.*;
-import net.linkle.valley.Registry.Blocks.Plants.Hanging.HangingBlock;
-import net.linkle.valley.Registry.Blocks.Plants.Hanging.HangingCrystalAltBlock;
-import net.linkle.valley.Registry.Blocks.Plants.Hanging.HangingCrystalBlock;
-import net.linkle.valley.Registry.Blocks.Plants.Hanging.HangingRedstoneCrystalBlock;
-import net.linkle.valley.Registry.Blocks.Plants.Stumps.BrownStumpBlock;
-import net.linkle.valley.Registry.Blocks.Plants.Stumps.MorelStumpBlock;
-import net.linkle.valley.Registry.Blocks.Plants.Stumps.RedStumpBlock;
+import net.linkle.valley.Registry.Blocks.Plants.Hanging.*;
+import net.linkle.valley.Registry.Blocks.Plants.Stumps.*;
+import net.linkle.valley.Registry.Utils.Util;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.item.Item;
@@ -18,423 +13,209 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Rarity;
 
 import static net.linkle.valley.Registry.Initializers.ItemGroups.*;
-import static net.linkle.valley.Registry.Initializers.ItemGroups.COOKING_GROUP;
 import static net.linkle.valley.Registry.Utils.Util.registerWithItem;
 
 public class Furniture {
-    public static final Block TABLE_OAK = new TableBlock();
-    public static final Block TABLE_DARK = new TableBlock();
-    public static final Block TABLE_SPRUCE = new TableBlock();
-    public static final Block TABLE_JUNGLE = new TableBlock();
-    public static final Block TABLE_ACACIA = new TableBlock();
-    public static final Block TABLE_BIRCH = new TableBlock();
-    public static final Block TABLE_WARPED = new TableBlock();
-    public static final Block TABLE_CRIMSON = new TableBlock();
-    public static final Block TABLE_STONE = new TableBlock();
-    public static final Block TABLE_PLAID = new TableBlock();
+    private static final Item.Settings furnGroup = new Item.Settings().group(FURNITURE_GROUP);
+    private static final Item.Settings explGroup = new Item.Settings().group(EXPLORATION_GROUP);
+    private static final Item.Settings cookGroup = new Item.Settings().group(COOKING_GROUP);
+    private static final Item.Settings furnGroupRare = new Item.Settings().group(FURNITURE_GROUP).rarity(Rarity.RARE);
+    
+    public static final RegistrySupplier<Block> TABLE_OAK = registerWithItem("table_oak", () -> new TableBlock(), furnGroup);
+    public static final RegistrySupplier<Block> TABLE_DARK = registerWithItem("table_dark_oak", () -> new TableBlock(), furnGroup);
+    public static final RegistrySupplier<Block> TABLE_SPRUCE = registerWithItem("table_spruce", () -> new TableBlock(), furnGroup);
+    public static final RegistrySupplier<Block> TABLE_JUNGLE = registerWithItem("table_jungle", () -> new TableBlock(), furnGroup);
+    public static final RegistrySupplier<Block> TABLE_ACACIA = registerWithItem("table_acacia", () -> new TableBlock(), furnGroup);
+    public static final RegistrySupplier<Block> TABLE_BIRCH = registerWithItem("table_birch", () -> new TableBlock(), furnGroup);
+    public static final RegistrySupplier<Block> TABLE_WARPED = registerWithItem("table_warped", () -> new TableBlock(), furnGroup);
+    public static final RegistrySupplier<Block> TABLE_CRIMSON = registerWithItem("table_crimson", () -> new TableBlock(), furnGroup);
+    public static final RegistrySupplier<Block> TABLE_STONE = registerWithItem("table_stone", () -> new TableBlock(), furnGroup);
+    public static final RegistrySupplier<Block> TABLE_PLAID = registerWithItem("table_plaid", () -> new TableBlock(), furnGroup);
 
-    public static final Block STOOL_OAK = new StoolBlock();
-    public static final Block STOOL_DARK = new StoolBlock();
-    public static final Block STOOL_SPRUCE = new StoolBlock();
-    public static final Block STOOL_JUNGLE = new StoolBlock();
-    public static final Block STOOL_ACACIA = new StoolBlock();
-    public static final Block STOOL_BIRCH = new StoolBlock();
-    public static final Block STOOL_WARPED = new StoolBlock();
-    public static final Block STOOL_CRIMSON = new StoolBlock();
-    public static final Block STOOL_STONE = new StoolBlock();
-    public static final Block STOOL_PLAID = new StoolBlock();
+    public static final RegistrySupplier<Block> STOOL_OAK = registerWithItem("stool_oak", () -> new StoolBlock(), furnGroup);
+    public static final RegistrySupplier<Block> STOOL_DARK = registerWithItem("stool_dark_oak", () -> new StoolBlock(), furnGroup);
+    public static final RegistrySupplier<Block> STOOL_SPRUCE = registerWithItem("stool_spruce", () -> new StoolBlock(), furnGroup);
+    public static final RegistrySupplier<Block> STOOL_JUNGLE = registerWithItem("stool_jungle", () -> new StoolBlock(), furnGroup);
+    public static final RegistrySupplier<Block> STOOL_ACACIA = registerWithItem("stool_acacia", () -> new StoolBlock(), furnGroup);
+    public static final RegistrySupplier<Block> STOOL_BIRCH = registerWithItem("stool_birch", () -> new StoolBlock(), furnGroup);
+    public static final RegistrySupplier<Block> STOOL_WARPED = registerWithItem("stool_warped", () -> new StoolBlock(), furnGroup);
+    public static final RegistrySupplier<Block> STOOL_CRIMSON = registerWithItem("stool_crimson", () -> new StoolBlock(), furnGroup);
+    public static final RegistrySupplier<Block> STOOL_STONE = registerWithItem("stool_stone", () -> new StoolBlock(), furnGroup);
+    public static final RegistrySupplier<Block> STOOL_PLAID = registerWithItem("stool_plaid", () -> new StoolBlock(), furnGroup);
 
-    public static final Block CHAIR_STONE = new StoolBlock();
+    public static final RegistrySupplier<Block> IRON_LADDER = registerWithItem("iron_ladder", () -> new LadderBlock(Block.Settings.of(Material.METAL).sounds(BlockSoundGroup.METAL).strength(1f,5f)), furnGroup);
+    public static final RegistrySupplier<Block> BAMBOO_LADDER = registerWithItem("bamboo_ladder", () -> new LadderBlock(), furnGroup);
+    public static final RegistrySupplier<Block> OAK_LADDER = registerWithItem("ladder_oak", () -> new LadderBlock(), furnGroup);
+    public static final RegistrySupplier<Block> BIRCH_LADDER = registerWithItem("ladder_birch", () -> new LadderBlock(), furnGroup);
+    public static final RegistrySupplier<Block> ACACIA_LADDER = registerWithItem("ladder_acacia", () -> new LadderBlock(), furnGroup);
+    public static final RegistrySupplier<Block> SPRUCE_LADDER = registerWithItem("ladder_spruce", () -> new LadderBlock(), furnGroup);
+    public static final RegistrySupplier<Block> DARK_LADDER = registerWithItem("ladder_dark", () -> new LadderBlock(), furnGroup);
+    public static final RegistrySupplier<Block> JUNGLE_LADDER = registerWithItem("ladder_jungle", () -> new LadderBlock(), furnGroup);
+    public static final RegistrySupplier<Block> CRIMSON_LADDER = registerWithItem("ladder_crimson", () -> new LadderBlock(), furnGroup);
+    public static final RegistrySupplier<Block> WARPED_LADDER = registerWithItem("ladder_warped", () -> new LadderBlock(), furnGroup);
 
-    public static final Block IRON_LADDER = new LadderBlock(FabricBlockSettings.of(Material.METAL).sounds(BlockSoundGroup.METAL).strength(1f,5f));
-    public static final Block BAMBOO_LADDER = new LadderBlock();
-    public static final Block OAK_LADDER = new LadderBlock();
-    public static final Block BIRCH_LADDER = new LadderBlock();
-    public static final Block ACACIA_LADDER = new LadderBlock();
-    public static final Block SPRUCE_LADDER = new LadderBlock();
-    public static final Block DARK_LADDER = new LadderBlock();
-    public static final Block JUNGLE_LADDER = new LadderBlock();
-    public static final Block CRIMSON_LADDER = new LadderBlock();
-    public static final Block WARPED_LADDER = new LadderBlock();
+    public static final RegistrySupplier<Block> SCARE = registerWithItem("scarecrow", () -> new StatueBlock(false), furnGroup);
+    public static final RegistrySupplier<Block> SCARE_HAT = registerWithItem("scarecrow_hat", () -> new StatueBlock(false), furnGroup);
 
-    public static final Block SCARE = new StatueBlock(false);
-    public static final Block SCARE_HAT = new StatueBlock(false);
+    public static final RegistrySupplier<Block> SCARE_GLOW = registerWithItem("scarecrow_glow", () -> new StatueBlock(true), furnGroup);
+    public static final RegistrySupplier<Block> SCARE_HAT_GLOW = registerWithItem("scarecrow_hat_glow", () -> new StatueBlock(true), furnGroup);
 
-    public static final Block SCARE_GLOW = new StatueBlock(true);
-    public static final Block SCARE_HAT_GLOW = new StatueBlock(true);
+    public static final RegistrySupplier<Block> SCARE_SOUL = registerWithItem("scarecrow_soul", () -> new StatueBlock(true), furnGroup);
+    public static final RegistrySupplier<Block> SCARE_HAT_SOUL = registerWithItem("scarecrow_hat_soul", () -> new StatueBlock(true), furnGroup);
 
-    public static final Block SCARE_SOUL = new StatueBlock(true);
-    public static final Block SCARE_HAT_SOUL = new StatueBlock(true);
+    public static final RegistrySupplier<Block> SCARE_TARGET = registerWithItem("scarecrow_target", () -> new StatueBlock(false), furnGroup);
+    public static final RegistrySupplier<Block> RARE_MELON = registerWithItem("rarecrow_melon", () -> new StatueBlock(false), furnGroup);
+    public static final RegistrySupplier<Block> RARE_ZOMBIE = registerWithItem("rarecrow_zombie", () -> new StatueBlock(false), furnGroup);
+    public static final RegistrySupplier<Block> RARE_SKELETON = registerWithItem("rarecrow_skeleton", () -> new StatueBlock(false), furnGroup);
 
-    public static final Block SCARE_TARGET = new StatueBlock(false);
-    public static final Block RARE_MELON = new StatueBlock(false);
-    public static final Block RARE_ZOMBIE = new StatueBlock(false);
-    public static final Block RARE_SKELETON = new StatueBlock(false);
+    public static final RegistrySupplier<Block> SCARE_COPPER = registerWithItem("scarecrow_copper", () -> new StatueBlock(true), furnGroup);
+    public static final RegistrySupplier<Block> SCARE_HAT_COPPER = registerWithItem("scarecrow_hat_copper", () -> new StatueBlock(true), furnGroup);
 
-    public static final Block SCARE_COPPER = new StatueBlock(true);
-    public static final Block SCARE_HAT_COPPER = new StatueBlock(true);
+    public static final RegistrySupplier<Block> SNOW = registerWithItem("snow", () -> new SnowmanBlock(), furnGroup);
 
-    public static final Block SNOW = new SnowmanBlock();
-
-    public static final Block ROPE_BRIDGE = new RopeBridgeBlock(FabricBlockSettings.of(Material.WOOD).nonOpaque()
-            .breakByHand(true)
+    public static final RegistrySupplier<Block> ROPE_BRIDGE = registerWithItem("rope_bridge", () -> new RopeBridgeBlock(Block.Settings.of(Material.WOOD).nonOpaque()
             .sounds(BlockSoundGroup.WOOD)
-            .strength(1.0f,1f));
+            .strength(1.0f,1f)), explGroup);
 
-    public static final Block ROPE_BRIDGE_ANCHOR = new RopeBridgeBlock(FabricBlockSettings.of(Material.WOOD).nonOpaque()
-            .breakByHand(true)
+    public static final RegistrySupplier<Block> ROPE_BRIDGE_ANCHOR = registerWithItem("rope_bridge_anchor", () -> new RopeBridgeBlock(Block.Settings.of(Material.WOOD).nonOpaque()
             .sounds(BlockSoundGroup.WOOD)
-            .strength(1.0f,1f).collidable(false));
+            .strength(1.0f,1f).noCollision()), explGroup);
 
-    public static final Block SMOOTH_STONE_BRICK = new PolishedStoneBlock();
-    public static final Block SMOOTH_STONE_TILE = new PolishedStoneBlock();
-    public static final Block SMOOTH_STONE_TILE_SLAB = new TileSlabBlock();
-    public static final Block SMOOTH_STONE_TILE_STAIRS = new TileStairsBlock();
+    public static final RegistrySupplier<Block> SMOOTH_STONE_BRICK = registerWithItem("smooth_stone", () -> new PolishedStoneBlock(), furnGroup);
+    public static final RegistrySupplier<Block> SMOOTH_STONE_TILE = registerWithItem("stone_tiles", () -> new PolishedStoneBlock(), furnGroup);
+    public static final RegistrySupplier<Block> SMOOTH_STONE_TILE_SLAB = registerWithItem("stone_tile_slab", () -> new TileSlabBlock(), furnGroup);
+    public static final RegistrySupplier<Block> SMOOTH_STONE_TILE_STAIRS = registerWithItem("stone_tile_stairs", () -> new TileStairsBlock(), furnGroup);
 
-    public static final Block COBBLE_BRICK = new PolishedStoneBlock();
-    public static final Block COBBLE_MOSSY = new PolishedStoneBlock();
-    public static final Block COBBLE_SLAB = new TileSlabBlock();
-    public static final Block COBBLE_STAIRS = new TileStairsBlock();
+    public static final RegistrySupplier<Block> COBBLE_BRICK = registerWithItem("cobblestone_brick", () -> new PolishedStoneBlock(), furnGroup);
+    public static final RegistrySupplier<Block> COBBLE_MOSSY = registerWithItem("cobblestone_mossy_brick", () -> new PolishedStoneBlock(), furnGroup);
+    public static final RegistrySupplier<Block> COBBLE_SLAB = registerWithItem("cobblestone_brick_slab", () -> new TileSlabBlock(), furnGroup);
+    public static final RegistrySupplier<Block> COBBLE_STAIRS = registerWithItem("cobblestone_brick_stairs", () -> new TileStairsBlock(), furnGroup);
 
-    public static final Block NET = new NetBlock();
-    public static final Block B_BRICKS = new BrownBlock();
-    public static final Block B_CRACKED = new BrownBlock();
-    public static final Block B_MOSSY = new BrownMossyBlock();
-    public static final Block B_STAIRS = new BrownStairsBlock();
-    public static final Block B_SLAB = new BrownSlabBlock();
-    public static final Block SCREEN = new ScreenBlock();
-    public static final Block BRAZIER = new BrazierBlock(15);
-    public static final Block SOUL_BRAZIER = new BrazierBlock(10);
-    public static final Block COPPER_BRAZIER = new BrazierBlock(13);
-    public static final Block BLAZE_BRAZIER = new BrazierBlock(15);
+    public static final RegistrySupplier<Block> NET = registerWithItem("net_block", () -> new NetBlock(), explGroup);
+    public static final RegistrySupplier<Block> B_BRICKS = registerWithItem("brown_bricks", () -> new BrownBlock(), furnGroup);
+    public static final RegistrySupplier<Block> B_CRACKED = registerWithItem("brown_cracked_bricks", () -> new BrownBlock(), furnGroup);
+    public static final RegistrySupplier<Block> B_MOSSY = registerWithItem("brown_mossy_bricks", () -> new BrownBlock(), furnGroup);
+    public static final RegistrySupplier<Block> B_STAIRS = registerWithItem("brown_brick_stairs", () -> new BrownStairsBlock(), furnGroup);
+    public static final RegistrySupplier<Block> B_SLAB = registerWithItem("brown_brick_slab", () -> new BrownSlabBlock(), furnGroup);
+    public static final RegistrySupplier<Block> SCREEN = registerWithItem("screen", () -> new ScreenBlock(), furnGroup);
+    public static final RegistrySupplier<Block> BRAZIER = registerWithItem("brazier", () -> new BrazierBlock(15), furnGroup);
+    public static final RegistrySupplier<Block> SOUL_BRAZIER = registerWithItem("brazier_soul", () -> new BrazierBlock(10), furnGroup);
+    public static final RegistrySupplier<Block> COPPER_BRAZIER = registerWithItem("brazier_copper", () -> new BrazierBlock(13), furnGroup);
 
-    public static final Block C_BRICKS = new BrownBlock();
-    public static final Block C_CHISELED = new BrownBlock();
-    public static final Block C_STAIRS = new BrownStairsBlock();
-    public static final Block C_SLAB = new BrownSlabBlock();
-    public static final Block C_MOSSY = new BrownBlock();
-    public static final Block C_CRACK = new BrownBlock();
-    public static final Block C_SMOOTH = new BrownBlock();
+    public static final RegistrySupplier<Block> C_BRICKS = registerWithItem("carmine_bricks", () -> new BrownBlock(), furnGroup);
+    public static final RegistrySupplier<Block> C_CHISELED = registerWithItem("chiseled_carmine", () -> new BrownBlock(), furnGroup);
+    public static final RegistrySupplier<Block> C_STAIRS = registerWithItem("carmine_stairs", () -> new BrownStairsBlock(), furnGroup);
+    public static final RegistrySupplier<Block> C_SLAB = registerWithItem("carmine_slab", () -> new BrownSlabBlock(), furnGroup);
+    public static final RegistrySupplier<Block> C_MOSSY = registerWithItem("carmine_mossy", () -> new BrownBlock(), furnGroup);
+    public static final RegistrySupplier<Block> C_CRACK = registerWithItem("carmine_cracked", () -> new BrownBlock(), furnGroup);
+    public static final RegistrySupplier<Block> C_SMOOTH = registerWithItem("carmine_smooth", () -> new BrownBlock(), furnGroup);
 
-    public static final Block ANCHOR = new AnchorBlock();
+    public static final RegistrySupplier<Block> ANCHOR = registerWithItem("anchor", () -> new AnchorBlock(), furnGroupRare);
 
-    public static final Block CHARCOAL_BLOCK = new CharcoalBlock(FabricBlockSettings.of(Material.STONE)
-            .breakByTool(FabricToolTags.PICKAXES)
-            .breakByHand(false)
+    public static final RegistrySupplier<Block> CHARCOAL_BLOCK = registerWithItem("charcoal_block", () -> new CharcoalBlock(Block.Settings.of(Material.STONE)
             .sounds(BlockSoundGroup.STONE)
-            .strength(1, 2.0f));
+            .strength(1, 2.0f)), furnGroup);
 
-    public static final Block FIBER_BALE = new BaleBlock(FabricBlockSettings.of(Material.STONE)
-            .breakByTool(FabricToolTags.HOES)
-            .breakByHand(true)
+    public static final RegistrySupplier<Block> FIBER_BALE = registerWithItem("fiber_block", () -> new BaleBlock(Block.Settings.of(Material.STONE)
             .sounds(BlockSoundGroup.GRASS)
-            .strength(1, 1.0f));
+            .strength(1, 1.0f)), furnGroup);
 
-    public static final Block AMERANTH_BALE = new BaleBlock(FabricBlockSettings.of(Material.STONE)
-            .breakByTool(FabricToolTags.HOES)
-            .breakByHand(true)
+    public static final RegistrySupplier<Block> SEAWEED_BALE = registerWithItem("seaweed_block", () -> new BaleBlock(Block.Settings.of(Material.STONE)
             .sounds(BlockSoundGroup.GRASS)
-            .strength(1, 1.0f));
-
-    public static final Block SEAWEED_BALE = new BaleBlock(FabricBlockSettings.of(Material.STONE)
-            .breakByTool(FabricToolTags.HOES)
-            .breakByHand(true)
-            .sounds(BlockSoundGroup.GRASS)
-            .strength(1, 1.0f));
+            .strength(1, 1.0f)), furnGroup);
 
     //rope
-    public static final Block CLIMBABLE_ROPE = new ClimbableRopeBlock(FabricBlockSettings.of(Material.NETHER_WOOD).nonOpaque()
-            .breakByHand(true)
+    public static final RegistrySupplier<Block> CLIMBABLE_ROPE = registerWithItem("climbable_rope", () -> new ClimbableRopeBlock(Block.Settings.of(Material.NETHER_WOOD).nonOpaque()
             .sounds(BlockSoundGroup.NETHER_STEM)
-            .strength(0,0.1f));
+            .strength(0,0.1f)), explGroup);
 
     //chain
-    public static final Block CHAIN_C = new ClimbableChainBlock(FabricBlockSettings.of(Material.NETHER_WOOD).nonOpaque()
-            .breakByHand(true)
+    public static final RegistrySupplier<Block> CHAIN_C = registerWithItem("copper_chain", () -> new ClimbableChainBlock(Block.Settings.of(Material.NETHER_WOOD).nonOpaque()
             .sounds(BlockSoundGroup.CHAIN)
-            .strength(1,1.1f));
-    public static final Block CHAIN_G = new ClimbableChainBlock(FabricBlockSettings.of(Material.NETHER_WOOD).nonOpaque()
-            .breakByHand(true)
+            .strength(1,1.1f)), explGroup);
+    public static final RegistrySupplier<Block> CHAIN_G = registerWithItem("golden_chain", () -> new ClimbableChainBlock(Block.Settings.of(Material.NETHER_WOOD).nonOpaque()
             .sounds(BlockSoundGroup.CHAIN)
-            .strength(1,1.1f));
-    public static final Block CHAIN_N = new ClimbableChainBlock(FabricBlockSettings.of(Material.NETHER_WOOD).nonOpaque()
-            .breakByHand(true)
+            .strength(1,1.1f)), explGroup);
+    public static final RegistrySupplier<Block> CHAIN_N = registerWithItem("netherite_chain", () -> new ClimbableChainBlock(Block.Settings.of(Material.NETHER_WOOD).nonOpaque()
             .sounds(BlockSoundGroup.CHAIN)
-            .strength(1,1.1f));
+            .strength(1,1.1f)), explGroup);
 
     //lantern
 
-    public static final Block REDSTONE_LANTERN = new RedLanternBlock(FabricBlockSettings.of(Material.METAL).nonOpaque()
-            .breakByHand(true)
-            .sounds(BlockSoundGroup.CHAIN)
-            .strength(1.0f,0.8f).luminance(7));
+    public static final RegistrySupplier<Block> REDSTONE_LANTERN = registerWithItem("redstone_lantern", () -> new RedLanternBlock(
+            Block.Settings.of(Material.METAL).nonOpaque()
+            .sounds(BlockSoundGroup.CHAIN).luminance(Util.toInt(2))
+            .strength(1.0f,0.8f)), furnGroup);
 
-    public static final Block BEVELED_PANE = new BeveledGlassBlock();
-    public static final Block BEVELED_PANE_COPPER = new BeveledGlassBlock();
-    public static final Block BEVELED_PANE_GOLD = new BeveledGlassBlock();
-    public static final Block BEVELED_PANE_NETHERITE = new BeveledGlassBlock();
+    public static final RegistrySupplier<Block> BEVELED_PANE = registerWithItem("beveled_glass", () -> new BeveledGlassBlock(), furnGroup);
+    public static final RegistrySupplier<Block> BEVELED_PANE_COPPER = registerWithItem("beveled_glass_copper", () -> new BeveledGlassBlock(), furnGroup);
+    public static final RegistrySupplier<Block> BEVELED_PANE_GOLD = registerWithItem("beveled_glass_gold", () -> new BeveledGlassBlock(), furnGroup);
+    public static final RegistrySupplier<Block> BEVELED_PANE_NETHERITE = registerWithItem("beveled_glass_netherite", () -> new BeveledGlassBlock(), furnGroup);
 
-    public static final Block BEVELED_PANE_A = new BeveledGlassBlock();
-    public static final Block BEVELED_PANE_A_C = new BeveledGlassBlock();
-    public static final Block BEVELED_PANE_A_G = new BeveledGlassBlock();
-    public static final Block BEVELED_PANE_A_N = new BeveledGlassBlock();
+    public static final RegistrySupplier<Block> BEVELED_PANE_A = registerWithItem("beveled_glass_amethyst", () -> new BeveledGlassBlock(), furnGroup);
+    public static final RegistrySupplier<Block> BEVELED_PANE_A_C = registerWithItem("beveled_glass_amethyst_copper", () -> new BeveledGlassBlock(), furnGroup);
+    public static final RegistrySupplier<Block> BEVELED_PANE_A_G = registerWithItem("beveled_glass_amethyst_gold", () -> new BeveledGlassBlock(), furnGroup);
+    public static final RegistrySupplier<Block> BEVELED_PANE_A_N = registerWithItem("beveled_glass_amethyst_netherite", () -> new BeveledGlassBlock(), furnGroup);
 
-    public static final Block MUG_BLOCK = new DishBlock();
-    public static final Block JAR_BLOCK = new DishBlock();
-    public static final Block BENTO_BLOCK = new BentoBlock();
-    public static final Block BOWL_BLOCK = new BowlBlock();
-    public static final Block STEW_POT = new StewPotBlock();
-    public static final Block STEW_POT_CAMPFIRE = new StewPotCampfireBlock();
-    public static final Block SMALL_MUG_BLOCK = new DishBlock();
-    public static final Block GOBLET_BLOCK = new DishBlock();
+    public static final RegistrySupplier<Block> MUG_BLOCK = registerWithItem("mug_block", () -> new DishBlock(), cookGroup);
+    public static final RegistrySupplier<Block> BENTO_BLOCK = registerWithItem("bento_block", () -> new BentoBlock(), cookGroup);
+    public static final RegistrySupplier<Block> BOWL_BLOCK = registerWithItem("bowl_block", () -> new BowlBlock(), cookGroup);
+    public static final RegistrySupplier<Block> STEW_POT = registerWithItem("stew_pot", () -> new StewPotBlock(), furnGroup);
+    public static final RegistrySupplier<Block> STEW_POT_CAMPFIRE = registerWithItem("stew_campfire_pot", () -> new StewPotCampfireBlock(), furnGroup);
+    public static final RegistrySupplier<Block> SMALL_MUG_BLOCK = registerWithItem("small_mug_block", () -> new DishBlock(), cookGroup);
+    public static final RegistrySupplier<Block> GOBLET_BLOCK = registerWithItem("goblet", () -> new DishBlock(), cookGroup);
 
-    public static final Block SPIKE_WALL_BLOCK = new SpikeTrapBlock(FabricBlockSettings.of(Material.WOOD)
-            .breakByTool(FabricToolTags.AXES)
-            .breakByHand(true)
+    public static final RegistrySupplier<Block> SPIKE_WALL_BLOCK = registerWithItem("spike_wall_block", 
+            () -> new SpikeTrapBlock(Block.Settings.of(Material.WOOD)
             .sounds(BlockSoundGroup.WOOD)
-            .strength(1.5f, 1.5f));
+            .strength(1.5f, 1.5f)), furnGroup);
 
-    public static final Block ROUNDED_BARREL = new RoundedBarrelBlock();
-    public static final Block SOUL_JACK = new JackBlock();
-    public static final Block COPPER_JACK = new JackBlock();
-    public static final Block VOLCANIC_STONE_SMOOTH = new StoneOreBlock();
+    public static final RegistrySupplier<Block> ROUNDED_BARREL = registerWithItem("rounded_barrel", () -> new RoundedBarrelBlock(), furnGroup);
+    public static final RegistrySupplier<Block> SOUL_JACK = registerWithItem("soul_jack_o_lantern", () -> new JackBlock(), furnGroup);
+    public static final RegistrySupplier<Block> COPPER_JACK = registerWithItem("copper_jack_o_lantern", () -> new JackBlock(), furnGroup);
+    public static final RegistrySupplier<Block> VOLCANIC_STONE_SMOOTH = registerWithItem("volc_stone_smooth", () -> new StoneOreBlock(), furnGroup);
 
-    public static final Block LANTERN_HANGING = new LanternBlock(15, false);
-    public static final Block SOUL_HANGING = new LanternBlock(10, false);
-    public static final Block FAIRY_HANGING = new LanternBlock(15, false);
-    public static final Block RED_HANGING = new LanternBlock(7, true);
+    public static final RegistrySupplier<Block> LANTERN_HANGING = registerWithItem("lantern_hanging", () -> new LanternBlock(15, false), furnGroup);
+    public static final RegistrySupplier<Block> SOUL_HANGING = registerWithItem("soul_hanging", () -> new LanternBlock(10, false), furnGroup);
+    public static final RegistrySupplier<Block> RED_HANGING = registerWithItem("redstone_hanging", () -> new LanternBlock(7, true), furnGroup);
 
-    public static final Block CHIMNEY_COBBLE = new ChimneyBlock(FabricBlockSettings.of(Material.STONE)
-            .breakByTool(FabricToolTags.PICKAXES)
-            .breakByHand(false)
+    public static final RegistrySupplier<Block> CHIMNEY_COBBLE = registerWithItem("chimney_cobble", 
+            () -> new ChimneyBlock(Block.Settings.of(Material.STONE)
             .sounds(BlockSoundGroup.STONE)
-            .strength(1, 2.0f));
+            .strength(1, 2.0f)), furnGroup);
 
-    public static final Block HANGING = new HangingBlock();
-    public static final Block CRYSTAL = new CrystalBlock();
+    public static final RegistrySupplier<Block> HANGING = registerWithItem("hanging_pot", () -> new HangingBlock(), furnGroup);
+    public static final RegistrySupplier<Block> CRYSTAL = registerWithItem("crystal_ball", () -> new CrystalBlock(), furnGroup);
 
-    public static final Block BOOK_COBWEB = new BookshelfBlock();
-    public static final Block EMPTY_SHELF = new BookshelfBlock();
-    public static final Block EMPTY_COBWEB = new BookshelfBlock();
-    public static final Block LANTERN_SHELF = new BookshelfBlockGlow();
-    public static final Block LANTERN_COBWEB = new BookshelfBlockGlow();
-    public static final Block DISH_SHELF = new BookshelfBlock();
-    public static final Block DISH_COBWEB = new BookshelfBlock();
-    public static final Block POTION_SHELF = new BookshelfBlock();
-    public static final Block POTION_COBWEB = new BookshelfBlock();
-    public static final Block ANTHRO_SHELF = new BookshelfBlock();
-    public static final Block ANTHRO_COBWEB  = new BookshelfBlock();
+    public static final RegistrySupplier<Block> BOOK_COBWEB = registerWithItem("bookshelf_cobweb", () -> new BookshelfBlock(), furnGroup);
+    public static final RegistrySupplier<Block> EMPTY_SHELF = registerWithItem("bookshelf_empty", () -> new BookshelfBlock(), furnGroup);
+    public static final RegistrySupplier<Block> EMPTY_COBWEB = registerWithItem("bookshelf_empty_cobweb", () -> new BookshelfBlock(), furnGroup);
+    public static final RegistrySupplier<Block> LANTERN_SHELF = registerWithItem("bookshelf_lantern", () -> new BookshelfBlockGlow(), furnGroup);
+    public static final RegistrySupplier<Block> LANTERN_COBWEB = registerWithItem("bookshelf_lantern_cobweb", () -> new BookshelfBlockGlow(), furnGroup);
+    public static final RegistrySupplier<Block> DISH_SHELF = registerWithItem("bookshelf_dishes", () -> new BookshelfBlock(), furnGroup);
+    public static final RegistrySupplier<Block> DISH_COBWEB = registerWithItem("bookshelf_dishes_cobweb", () -> new BookshelfBlock(), furnGroup);
+    public static final RegistrySupplier<Block> POTION_SHELF = registerWithItem("bookshelf_potions", () -> new BookshelfBlock(), furnGroup);
+    public static final RegistrySupplier<Block> POTION_COBWEB = registerWithItem("bookshelf_potions_cobweb", () -> new BookshelfBlock(), furnGroup);
+    public static final RegistrySupplier<Block> ANTHRO_SHELF = registerWithItem("bookshelf_anthropology", () -> new BookshelfBlock(), furnGroup);
+    public static final RegistrySupplier<Block> ANTHRO_COBWEB  = registerWithItem("bookshelf_anthropology_cobweb", () -> new BookshelfBlock(), furnGroup);
 
-    public static final Block STUMP_MOREL  = new MorelStumpBlock();
-    public static final Block STUMP_RED  = new RedStumpBlock();
-    public static final Block STUMP_BROWN  = new BrownStumpBlock();
+    public static final RegistrySupplier<Block> STUMP_MOREL  = registerWithItem("stump_morel", () -> new MorelStumpBlock(), furnGroup);
+    public static final RegistrySupplier<Block> STUMP_RED  = registerWithItem("stump_red", () -> new RedStumpBlock(), furnGroup);
+    public static final RegistrySupplier<Block> STUMP_BROWN  = registerWithItem("stump_brown", () -> new BrownStumpBlock(), furnGroup);
 
-    public static final Block HANGING_R = new HangingRedstoneCrystalBlock();
-    public static final Block HANGING_F = new HangingCrystalBlock();
-    public static final Block HANGING_D = new HangingCrystalAltBlock();
-    public static final Block HANGING_E = new HangingCrystalAltBlock();
-    public static final Block HANGING_A = new HangingCrystalAltBlock();
-    public static final Block HANGING_G = new HangingCrystalBlock();
+    public static final RegistrySupplier<Block> HANGING_D = registerWithItem("hanging_diamond", () -> new HangingCrystalAltBlock(), furnGroup);
+    public static final RegistrySupplier<Block> HANGING_E = registerWithItem("hanging_emerald", () -> new HangingCrystalAltBlock(), furnGroup);
+    public static final RegistrySupplier<Block> HANGING_A = registerWithItem("hanging_amethyst", () -> new HangingCrystalAltBlock(), furnGroup);
+    public static final RegistrySupplier<Block> HANGING_G = registerWithItem("hanging_glowstone", () -> new HangingCrystalBlock(), furnGroup);
 
-    public static final Block KEG = new KegBlock();
+    public static final RegistrySupplier<Block> KEG = registerWithItem("keg", () -> new KegBlock(), furnGroup);
 
-    public static final Block PET_BED = new PetBedBlock();
-    public static final Block WREATH = new WreathBlock();
-    public static final Block CREST = new CrestBlock();
-    public static final Block GEAR = new GearBlock();
-
-    public static final Block BRAZIER_METAL = new BrazierMetalBlock();
+    public static final RegistrySupplier<Block> PET_BED = registerWithItem("pet_bed", () -> new PetBedBlock(), furnGroup);
+    public static final RegistrySupplier<Block> WREATH = registerWithItem("wreath", () -> new WreathBlock(), furnGroup);
+    public static final RegistrySupplier<Block> CREST = registerWithItem("miners_crest", () -> new CrestBlock(), furnGroup);
+    public static final RegistrySupplier<Block> GEAR = registerWithItem("gear", () -> new GearBlock(), furnGroupRare);
 
     public static void initialize() {
-        var furnGroup = new Item.Settings().group(FURNITURE_GROUP);
-        var explGroup = new Item.Settings().group(EXPLORATION_GROUP);
-        var cookGroup = new Item.Settings().group(COOKING_GROUP);
-        var furnGroupRare = new Item.Settings().group(FURNITURE_GROUP).rarity(Rarity.RARE);
-        
-        registerWithItem("table_oak", TABLE_OAK, furnGroup);
-        registerWithItem("table_stone", TABLE_STONE, furnGroup);
-        registerWithItem("table_plaid", TABLE_PLAID, furnGroup);
-        registerWithItem("table_birch", TABLE_BIRCH, furnGroup);
-        registerWithItem("table_spruce", TABLE_SPRUCE, furnGroup);
-        registerWithItem("table_jungle", TABLE_JUNGLE, furnGroup);
-        registerWithItem("table_acacia", TABLE_ACACIA, furnGroup);
-        registerWithItem("table_dark_oak", TABLE_DARK, furnGroup);
-        registerWithItem("table_warped", TABLE_WARPED, furnGroup);
-        registerWithItem("table_crimson", TABLE_CRIMSON, furnGroup);
-        
-        registerWithItem("stool_oak", STOOL_OAK, furnGroup);
-        registerWithItem("stool_stone", STOOL_STONE, furnGroup);
-        registerWithItem("stool_plaid", STOOL_PLAID, furnGroup);
-        registerWithItem("stool_birch", STOOL_BIRCH, furnGroup);
-        registerWithItem("stool_spruce", STOOL_SPRUCE, furnGroup);
-        registerWithItem("stool_jungle", STOOL_JUNGLE, furnGroup);
-        registerWithItem("stool_acacia", STOOL_ACACIA, furnGroup);
-        registerWithItem("stool_dark_oak", STOOL_DARK, furnGroup);
-        registerWithItem("stool_warped", STOOL_WARPED, furnGroup);
-        registerWithItem("stool_crimson", STOOL_CRIMSON, furnGroup);
-
-        //registerWithItem("chair_stone", CHAIR_STONE, furnGroup);
-
-        registerWithItem("iron_ladder", IRON_LADDER, furnGroup);
-        registerWithItem("bamboo_ladder", BAMBOO_LADDER, furnGroup);
-        registerWithItem("ladder_oak", OAK_LADDER, furnGroup);
-        registerWithItem("ladder_birch", BIRCH_LADDER, furnGroup);
-        registerWithItem("ladder_spruce", SPRUCE_LADDER, furnGroup);
-        registerWithItem("ladder_jungle", JUNGLE_LADDER, furnGroup);
-        registerWithItem("ladder_acacia", ACACIA_LADDER, furnGroup);
-        registerWithItem("ladder_dark", DARK_LADDER, furnGroup);
-        registerWithItem("ladder_warped", WARPED_LADDER, furnGroup);
-        registerWithItem("ladder_crimson", CRIMSON_LADDER, furnGroup);
-
-        registerWithItem("scarecrow", SCARE, furnGroup);
-        registerWithItem("scarecrow_target", SCARE_TARGET, furnGroup);
-        registerWithItem("scarecrow_hat", SCARE_HAT, furnGroup);
-        registerWithItem("scarecrow_glow", SCARE_GLOW, furnGroup);
-        registerWithItem("scarecrow_hat_glow", SCARE_HAT_GLOW, furnGroup);
-        registerWithItem("scarecrow_soul", SCARE_SOUL, furnGroup);
-        registerWithItem("scarecrow_hat_soul", SCARE_HAT_SOUL, furnGroup);
-        registerWithItem("scarecrow_copper", SCARE_COPPER, furnGroup);
-        registerWithItem("scarecrow_hat_copper", SCARE_HAT_COPPER, furnGroup);
-        
-        registerWithItem("rarecrow_melon", RARE_MELON, furnGroup);
-        registerWithItem("rarecrow_zombie", RARE_ZOMBIE, furnGroup);
-        registerWithItem("rarecrow_skeleton", RARE_SKELETON, furnGroup);
-
-        registerWithItem("snow", SNOW, furnGroup);
-        
-        registerWithItem("spike_wall_block", SPIKE_WALL_BLOCK, furnGroup);
-        registerWithItem("brazier", BRAZIER, furnGroup);
-        registerWithItem("brazier_soul", SOUL_BRAZIER, furnGroup);
-        registerWithItem("brazier_copper", COPPER_BRAZIER, furnGroup);
-        
-        //registerWithItem("brazier_metal", BRAZIER_METAL, furnGroup);
-        //registerWithItem("blaze_brazier", BLAZE_BRAZIER, furnGroup);
-
-        //Crock Pots *coming soonTM*
-        //registerWithItem("campfire_pot", CAMPFIRE_POT, explGroup);
-        //registerWithItem("soul_campfire_pot", SOUL_CAMPFIRE_POT, explGroup);
-        
-        registerWithItem("screen", SCREEN, furnGroup);
-
-        registerWithItem("charcoal_block", CHARCOAL_BLOCK, furnGroup);
-
-        registerWithItem("seaweed_block", SEAWEED_BALE, furnGroup);
-        //registerWithItem("ameranth_block", AMERANTH_BALE, furnGroup);
-        registerWithItem("fiber_block", FIBER_BALE, furnGroup);
-
-        registerWithItem("climbable_rope", CLIMBABLE_ROPE, explGroup);
-        registerWithItem("copper_chain", CHAIN_C, explGroup);
-        registerWithItem("golden_chain", CHAIN_G, explGroup);
-        registerWithItem("netherite_chain", CHAIN_N, explGroup);
-
-        registerWithItem("brown_bricks", B_BRICKS, furnGroup);
-        registerWithItem("brown_cracked_bricks", B_CRACKED, furnGroup);
-        registerWithItem("brown_mossy_bricks", B_MOSSY, furnGroup);
-        registerWithItem("brown_brick_slab", B_SLAB, furnGroup);
-        registerWithItem("brown_brick_stairs", B_STAIRS, furnGroup);
-        registerWithItem("smooth_stone", SMOOTH_STONE_BRICK, furnGroup);
-        registerWithItem("stone_tiles", SMOOTH_STONE_TILE, furnGroup);
-        registerWithItem("stone_tile_slab", SMOOTH_STONE_TILE_SLAB, furnGroup);
-        registerWithItem("stone_tile_stairs", SMOOTH_STONE_TILE_STAIRS, furnGroup);
-        
-        registerWithItem("cobblestone_brick", COBBLE_BRICK, furnGroup);
-        registerWithItem("cobblestone_mossy_brick", COBBLE_MOSSY, furnGroup);
-        registerWithItem("cobblestone_brick_slab", COBBLE_SLAB, furnGroup);
-        registerWithItem("cobblestone_brick_stairs", COBBLE_STAIRS, furnGroup);
-        
-        registerWithItem("carmine_bricks", C_BRICKS, furnGroup);
-        registerWithItem("carmine_slab", C_SLAB, furnGroup);
-        registerWithItem("carmine_stairs", C_STAIRS, furnGroup);
-        registerWithItem("chiseled_carmine", C_CHISELED, furnGroup);
-        registerWithItem("carmine_cracked", C_CRACK, furnGroup);
-        registerWithItem("carmine_mossy", C_MOSSY, furnGroup);
-        registerWithItem("carmine_smooth", C_SMOOTH, furnGroup);
-
-        //Lanterns & Torches
-        registerWithItem("redstone_lantern", REDSTONE_LANTERN, furnGroup);
-        
-        registerWithItem("mug_block", MUG_BLOCK, cookGroup);
-        registerWithItem("small_mug_block", SMALL_MUG_BLOCK, cookGroup);
-        registerWithItem("goblet", GOBLET_BLOCK, furnGroupRare);
-        registerWithItem("bowl_block", BOWL_BLOCK, cookGroup);
-        registerWithItem("bento_block", BENTO_BLOCK, cookGroup);
-        registerWithItem("stew_pot", STEW_POT, furnGroup);
-        registerWithItem("stew_campfire_pot", STEW_POT_CAMPFIRE, furnGroup);
-        
-        registerWithItem("anchor", ANCHOR, furnGroupRare);
-        registerWithItem("beveled_glass", BEVELED_PANE, furnGroup);
-        registerWithItem("beveled_glass_copper", BEVELED_PANE_COPPER, furnGroup);
-        registerWithItem("beveled_glass_gold", BEVELED_PANE_GOLD, furnGroup);
-        registerWithItem("beveled_glass_netherite", BEVELED_PANE_NETHERITE, furnGroup);
-        
-        //amethyst
-        registerWithItem("beveled_glass_amethyst", BEVELED_PANE_A, furnGroup);
-        registerWithItem("beveled_glass_amethyst_copper", BEVELED_PANE_A_C, furnGroup);
-        registerWithItem("beveled_glass_amethyst_gold", BEVELED_PANE_A_G, furnGroup);
-        registerWithItem("beveled_glass_amethyst_netherite", BEVELED_PANE_A_N, furnGroup);
-
-        registerWithItem("rope_bridge", ROPE_BRIDGE, explGroup);
-        registerWithItem("rope_bridge_anchor", ROPE_BRIDGE_ANCHOR, explGroup);
-        registerWithItem("net_block", NET, explGroup);
-
-        registerWithItem("lantern_hanging", LANTERN_HANGING, furnGroup);
-        registerWithItem("soul_hanging", SOUL_HANGING, furnGroup);
-        registerWithItem("redstone_hanging", RED_HANGING, furnGroup);
-
-        registerWithItem("rounded_barrel", ROUNDED_BARREL, furnGroup);
-
-        registerWithItem("soul_jack_o_lantern", SOUL_JACK, furnGroup);
-        registerWithItem("copper_jack_o_lantern", COPPER_JACK, furnGroup);
-
-        registerWithItem("volc_stone_smooth", VOLCANIC_STONE_SMOOTH, furnGroup);
-        
-        registerWithItem("chimney_cobble", CHIMNEY_COBBLE, furnGroup);
-        
-        registerWithItem("hanging_pot", HANGING, furnGroup);
-
-        //registerWithItem("hanging_redstone", HANGING_R, furnGroup);
-        //registerWithItem("hanging_fluorite", HANGING_F, furnGroup);
-
-        registerWithItem("hanging_diamond", HANGING_D, furnGroup);
-        registerWithItem("hanging_emerald", HANGING_E, furnGroup);
-        registerWithItem("hanging_amethyst", HANGING_A, furnGroup);
-        registerWithItem("hanging_glowstone", HANGING_G, furnGroup);
-
-        registerWithItem("crystal_ball", CRYSTAL, furnGroup);
-        //registerWithItem("crystal_ball_snow", CRYSTAL_FROZEN, furnGroupRare);
-        
-        registerWithItem("bookshelf_cobweb", BOOK_COBWEB, furnGroup);
-        
-        registerWithItem("bookshelf_empty", EMPTY_SHELF, furnGroup);
-        registerWithItem("bookshelf_empty_cobweb", EMPTY_COBWEB, furnGroup);
-        
-        registerWithItem("bookshelf_lantern", LANTERN_SHELF, furnGroup);
-        registerWithItem("bookshelf_lantern_cobweb", LANTERN_COBWEB, furnGroup);
-        
-        registerWithItem("bookshelf_potions", POTION_SHELF, furnGroup);
-        registerWithItem("bookshelf_potions_cobweb", POTION_COBWEB, furnGroup);
-        
-        registerWithItem("bookshelf_anthropology", ANTHRO_SHELF, furnGroup);
-        registerWithItem("bookshelf_anthropology_cobweb", ANTHRO_COBWEB, furnGroup);
-        
-        registerWithItem("bookshelf_dishes", DISH_SHELF, furnGroup);
-        registerWithItem("bookshelf_dishes_cobweb", DISH_COBWEB, furnGroup);
-        
-        registerWithItem("stump_morel", STUMP_MOREL, furnGroup);
-        registerWithItem("stump_red", STUMP_RED, furnGroup);
-        registerWithItem("stump_brown", STUMP_BROWN, furnGroup);
-
-        registerWithItem("keg", KEG, furnGroup);
-
-        registerWithItem("wreath", WREATH, furnGroup);
-        registerWithItem("miners_crest", CREST, furnGroup);
-        
-        registerWithItem("gear", GEAR, furnGroupRare);
-
-        registerWithItem("pet_bed", PET_BED, furnGroup);
-        
-        //Fuels
-        //same as Coal Block
-        FuelRegistry.INSTANCE.add(CHARCOAL_BLOCK, 16000);
+        ValleyMain.LOGGER.info("Furniture blocks has been initialized");
     }
 }

@@ -1,10 +1,5 @@
 package net.linkle.valley.Registry.Initializers;
 
-import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.linkle.valley.ValleyMain;
 import net.linkle.valley.Registry.Entity.BearEntity;
 import net.linkle.valley.Registry.Entity.BearEntityRenderer;
@@ -19,7 +14,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.BiomeKeys;
 
 public class Entities {
-
+    /*
     public static final EntityType<BearEntity> BEAR = Registry.register(Registry.ENTITY_TYPE,
         new Identifier(ValleyMain.MOD_ID, "bear"),
         FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, BearEntity::new)
@@ -52,4 +47,5 @@ public class Entities {
         EntityRendererRegistry.register(BEAR, BearEntityRenderer::new);
         EntityRendererRegistry.register(DUCK, DuckEntityRenderer::new);
     }
+    */
 }

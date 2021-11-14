@@ -1,6 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Decorations;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.linkle.valley.Registry.Commons.HorizontalWithWaterBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -18,8 +17,8 @@ public class SnowmanBlock extends HorizontalWithWaterBlock {
     private static final VoxelShape SHAPE = Block.createCuboidShape(4, 0, 4, 12, 30, 12);
 
     public SnowmanBlock() {
-        super(FabricBlockSettings.of(Material.SNOW_BLOCK)
-                .breakByHand(true).nonOpaque()
+        super(Settings.of(Material.SNOW_BLOCK)
+                .nonOpaque()
                 .sounds(BlockSoundGroup.SNOW)
                 .strength(1f, 1f));
         setDefaultState(stateManager.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));

@@ -1,7 +1,5 @@
 package net.linkle.valley.Registry.Initializers.ConfiguredFeatures;
 
-import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.linkle.valley.ValleyMain;
 import net.linkle.valley.Registry.Blocks.Plants.Bushes.BitterBerryBushBlock;
 import net.linkle.valley.Registry.Blocks.Plants.Bushes.MinerBushBlock;
@@ -32,6 +30,7 @@ import static net.linkle.valley.Registry.Initializers.Plants.*;
 
 @SuppressWarnings("deprecation")
 public class OverworldPlantConfiguredFeatures {
+    /*
     public static final ReedPatchFeature REED_PATCH = new ReedPatchFeature();    
     
     public static final ConfiguredFeature<?, ?> BUSH_PATCH = Feature.RANDOM_PATCH
@@ -372,4 +371,5 @@ public class OverworldPlantConfiguredFeatures {
         var categories = BiomeSelectors.categories(Category.RIVER, Category.PLAINS, Category.SWAMP, Category.FOREST, Category.JUNGLE, Category.TAIGA);
         BiomeModifications.addFeature(categories, GenerationStep.Feature.VEGETAL_DECORATION, registryKey);
     }
+    */
 }

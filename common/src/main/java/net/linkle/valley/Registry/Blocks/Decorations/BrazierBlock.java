@@ -1,7 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Decorations;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.linkle.valley.Registry.Commons.BlockWithWater;
 import net.minecraft.block.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
@@ -20,10 +18,9 @@ public class BrazierBlock extends BlockWithWater {
     protected static final VoxelShape BRAZIER_SHAPE;
 
     public BrazierBlock(int luminance) {
-        super(FabricBlockSettings.of(Material.WOOD)
-                .breakByHand(true).breakByTool(FabricToolTags.AXES)
-                .sounds(BlockSoundGroup.STONE).luminance(luminance)
-                .strength(1.0f, 1.0f));
+        super(Block.Settings.of(Material.WOOD)
+                .sounds(BlockSoundGroup.STONE)
+                .strength(1.0f, 1.0f).luminance(state -> luminance));
         setDefaultState(stateManager.getDefaultState().with(WATERLOGGED, false));
     }
 

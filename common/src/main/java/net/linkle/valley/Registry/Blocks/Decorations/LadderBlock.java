@@ -2,7 +2,6 @@ package net.linkle.valley.Registry.Blocks.Decorations;
 
 import org.jetbrains.annotations.Nullable;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.linkle.valley.Registry.Commons.HorizontalWithWaterBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -24,13 +23,13 @@ public class LadderBlock extends HorizontalWithWaterBlock {
     protected static final VoxelShape NORTH_SHAPE;
     
     public LadderBlock() {
-        this(FabricBlockSettings.of(Material.WOOD)
+        this(Settings.of(Material.WOOD)
                 .sounds(BlockSoundGroup.WOOD)
                 .strength(0.8f,0.8f));
     }
 
-    public LadderBlock(FabricBlockSettings setting) {
-        super(setting.nonOpaque().breakByHand(true));
+    public LadderBlock(Settings setting) {
+        super(setting.nonOpaque());
         setDefaultState(stateManager.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));
     }
 

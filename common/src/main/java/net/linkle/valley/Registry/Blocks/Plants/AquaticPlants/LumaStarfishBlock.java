@@ -1,6 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Plants.AquaticPlants;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.ai.pathing.NavigationType;
@@ -36,8 +35,7 @@ public class LumaStarfishBlock extends FacingBlock implements Waterloggable {
     public static final VoxelShape SHAPE;
 
     public LumaStarfishBlock() {
-        super(FabricBlockSettings.of(Material.NETHER_WOOD).nonOpaque()
-                .breakByHand(true)
+        super(Settings.of(Material.NETHER_WOOD).nonOpaque()
                 .sounds(BlockSoundGroup.NETHER_STEM)
                 .strength(0,0.1f));
         this.setDefaultState(this.stateManager.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));

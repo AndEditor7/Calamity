@@ -71,6 +71,6 @@ public class SieveToolMaterial implements ToolMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(NET);
+        return Ingredient.ofItems(NET.get());
     }
 }

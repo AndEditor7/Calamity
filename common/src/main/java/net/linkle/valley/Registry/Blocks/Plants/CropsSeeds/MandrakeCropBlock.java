@@ -11,7 +11,6 @@ import net.minecraft.util.shape.VoxelShape;
 import javax.swing.text.html.BlockView;
 
 import static net.linkle.valley.Registry.Initializers.Crops.MANDRAKE_SEEDS;
-import static net.linkle.valley.Registry.Initializers.Crops.PUFF_SEEDS;
 
 public class MandrakeCropBlock extends CropBlock {
     private static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
@@ -30,7 +29,7 @@ public class MandrakeCropBlock extends CropBlock {
     }
 
     public ItemConvertible getSeedsItem() {
-        return MANDRAKE_SEEDS;
+        return MANDRAKE_SEEDS.get();
     }
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {

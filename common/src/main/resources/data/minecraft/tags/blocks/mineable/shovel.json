@@ -3,6 +3,8 @@
   "values": [
 	"valley:brown_clay",
 	"valley:volc_ash", 
-	"valley:desert_gravel"
+	"valley:desert_gravel",
+	"valley:bleached_gravel",
+	"valley:snow"
   ]
 }

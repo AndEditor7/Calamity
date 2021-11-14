@@ -61,7 +61,7 @@ public class GrowthTotemBase extends AbstractTotemBase {
             }
         }
 
-        return stack.isEmpty() ? new ItemStack(G_TOTEM, 1) : stack;
+        return stack.isEmpty() ? new ItemStack(G_TOTEM.get()) : stack;
     }
 
     @Override

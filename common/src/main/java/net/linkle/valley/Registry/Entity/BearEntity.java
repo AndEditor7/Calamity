@@ -18,6 +18,6 @@ public class BearEntity extends PolarBearEntity {
 
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return Entities.BEAR.create(world);
+        return null; //Entities.BEAR.create(world);
     }
 }

@@ -1,7 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Plants;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.*;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.BlockSoundGroup;
@@ -15,15 +13,11 @@ import net.minecraft.world.WorldView;
 import java.util.Iterator;
 import java.util.Random;
 
-import static net.linkle.valley.Registry.Initializers.Furniture.HANGING;
-
 public class MorelBlock extends PlantBlock {
     protected static final VoxelShape SHAPE = Block.createCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
 
     public MorelBlock() {
-        super(FabricBlockSettings.of(Material.LEAVES)
-                .breakByTool(FabricToolTags.SHEARS)
-                .breakByHand(true)
+        super(Settings.of(Material.LEAVES)
                 .sounds(BlockSoundGroup.GRASS)
                 .strength(0, 0.5f));
     }

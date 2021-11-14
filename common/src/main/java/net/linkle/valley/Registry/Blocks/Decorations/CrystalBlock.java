@@ -2,7 +2,6 @@ package net.linkle.valley.Registry.Blocks.Decorations;
 
 import java.util.Random;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.linkle.valley.Registry.Commons.HorizontalWithWaterBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -22,10 +21,10 @@ public class CrystalBlock extends HorizontalWithWaterBlock {
     private static final VoxelShape SHAPE = Block.createCuboidShape(3, 0, 3, 13, 11, 13);
 
     public CrystalBlock() {
-        super(FabricBlockSettings.of(Material.WOOD)
-                .breakByHand(true).breakInstantly()
+        super(Block.Settings.of(Material.WOOD)
+                .breakInstantly().luminance(state -> 6)
                 .sounds(BlockSoundGroup.AMETHYST_CLUSTER)
-                .strength(0.5f, 2.5f).nonOpaque().luminance(6));
+                .strength(0.5f, 2.5f).nonOpaque());
         setDefaultState(stateManager.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));
     }
 

@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "net.linkle.valley.fabric.ValleyFabric"
+    ],
+	"client": [
+      "net.linkle.valley.fabric.ValleyFabricClient"
     ]
   },
   "mixins": [

@@ -1,90 +1,51 @@
 package net.linkle.valley.Registry.Initializers;
 
-
+import net.linkle.valley.ValleyMain;
 import net.linkle.valley.Registry.Blocks.Decorations.*;
 import net.linkle.valley.Registry.Blocks.Plants.*;
 import net.linkle.valley.Registry.Blocks.Plants.Decorative.SporeBlock;
 import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 import static net.linkle.valley.Registry.Initializers.ItemGroups.NATURE_GROUP;
-import static net.linkle.valley.ValleyMain.MOD_ID;
 import static net.linkle.valley.Registry.Utils.Util.registerWithItem;
 
+import dev.architectury.registry.registries.RegistrySupplier;
+
 public class StoneBlocks {
-    public static final Block VOLCANIC_ASH = new VolcanicAshBlock();
-    public static final Block VOLCANIC_STONE = new StoneOreBlock();
+ // RegistrySupplier<Block> registerWithItem("REDACTIVE", () -> 
+    private static final Item.Settings natureGroup = new Item.Settings().group(NATURE_GROUP);
+    public static final RegistrySupplier<Block> VOLCANIC_ASH = registerWithItem("volc_ash", () -> new VolcanicAshBlock(), natureGroup);
+    public static final RegistrySupplier<Block> VOLCANIC_STONE = registerWithItem("volc_stone", () -> new StoneOreBlock(), natureGroup);
 
-    public static final Block MIXED_ORE = new StoneOreBlock();
-    public static final Block SALTPETER_ORE = new StoneOreBlock();
-    public static final Block FOSSIL_ORE = new StoneOreBlock();
-    public static final Block FROZEN_FOSSIL = new FrozenFossilOreBlock();
+    public static final RegistrySupplier<Block> MIXED_ORE = registerWithItem("mixed_ore", () -> new StoneOreBlock(), natureGroup);
+    public static final RegistrySupplier<Block> SALTPETER_ORE = registerWithItem("saltpeter_ore", () -> new StoneOreBlock(), natureGroup);
 
-    public static final Block SCALDING_STONE = new ScaldingBlock();
-    public static final Block SCALDING_SANDSTONE = new ScaldingBlock();
-    public static final Block DESERT_GRAVEL = new VolcanicAshBlock();
-    public static final Block BLEACHED_GRAVEL = new VolcanicAshBlock();
-    public static final Block SCALDING_VOLC = new ScaldingBlock();
-    public static final Block GLACIAL_STONE = new GlacialStone();
+    public static final RegistrySupplier<Block> SCALDING_STONE = registerWithItem("scalding_stone", () -> new ScaldingBlock(), natureGroup);
+    public static final RegistrySupplier<Block> SCALDING_SANDSTONE = registerWithItem("scalding_sandstone", () -> new ScaldingBlock(), natureGroup);
+    public static final RegistrySupplier<Block> DESERT_GRAVEL = registerWithItem("desert_gravel", () -> new VolcanicAshBlock(), natureGroup);
+    public static final RegistrySupplier<Block> BLEACHED_GRAVEL = registerWithItem("bleached_gravel", () -> new VolcanicAshBlock(), natureGroup);
+    public static final RegistrySupplier<Block> SCALDING_VOLC = registerWithItem("scalding_volc_stone", () -> new ScaldingBlock(), natureGroup);
+    public static final RegistrySupplier<Block> GLACIAL_STONE = registerWithItem("glacial_stone", () -> new GlacialStone(), natureGroup);
 
-    public static final Block SALT_ORE = new StoneOreBlock();
-    public static final Block SALT_BLOCK = new StoneOreBlock();
-    public static final Block NETHER_SALT = new StoneOreBlock();
-    public static final Block NETHER_COAL_ORE = new StoneOreBlock();
-    public static final Block B_CLAY = new MudBlock();
-    public static final Block B_ROOTS = new BrownClayBlock();
+    public static final RegistrySupplier<Block> SALT_ORE = registerWithItem("salt_ore", () -> new StoneOreBlock(), natureGroup);
+    public static final RegistrySupplier<Block> SALT_BLOCK = registerWithItem("salt_block", () -> new StoneOreBlock(), natureGroup);
+    public static final RegistrySupplier<Block> NETHER_SALT = registerWithItem("nether_salt", () -> new StoneOreBlock(), natureGroup);
+    public static final RegistrySupplier<Block> NETHER_COAL_ORE = registerWithItem("nether_coal_ore", () -> new StoneOreBlock(), natureGroup);
+    public static final RegistrySupplier<Block> B_CLAY = registerWithItem("brown_clay", () -> new MudBlock(), natureGroup);
 
-    public static final Block JUNGLE = new StoneOreBlock();
-    public static final Block JUNGLE_MOSSY = new MossyBlock();
-    public static final Block JUNGLE_SPOREY = new SporeBlock();
-    public static final Block JUNGLE_COBBLE = new StoneOreBlock();
-    public static final Block STONE_MOSSY = new MossyBlock();
+    public static final RegistrySupplier<Block> JUNGLE = registerWithItem("jungle_stone", () -> new StoneOreBlock(), natureGroup);
+    public static final RegistrySupplier<Block> JUNGLE_MOSSY = registerWithItem("jungle_mossy", () -> new MossyBlock(), natureGroup);
+    public static final RegistrySupplier<Block> JUNGLE_SPOREY = registerWithItem("jungle_sporey", () -> new SporeBlock(), natureGroup);
+    public static final RegistrySupplier<Block> JUNGLE_COBBLE = registerWithItem("jungle_cobble", () -> new StoneOreBlock(), natureGroup);
+    public static final RegistrySupplier<Block> STONE_MOSSY = registerWithItem("stone_mossy", () -> new MossyBlock(), natureGroup);
 
-    public static final Block OCEAN_STONE = new StoneOreBlock();
-    public static final Block SWAMP_STONE = new StoneOreBlock();
-    public static final Block DARK_STONE = new StoneOreBlock();
-    public static final Block TAIGA_STONE = new StoneOreBlock();
-
-    public static final Block CICADA = new CicadaBlock();
+    public static final RegistrySupplier<Block> OCEAN_STONE = registerWithItem("oceanstone", () -> new StoneOreBlock(), natureGroup);
+    public static final RegistrySupplier<Block> SWAMP_STONE = registerWithItem("swampstone", () -> new StoneOreBlock(), natureGroup);
+    public static final RegistrySupplier<Block> DARK_STONE = registerWithItem("darkstone", () -> new StoneOreBlock(), natureGroup);
+    public static final RegistrySupplier<Block> TAIGA_STONE = registerWithItem("taigastone", () -> new StoneOreBlock(), natureGroup);
 
     public static void initialize() {
-        var natureGroup = new Item.Settings().group(NATURE_GROUP);
-        
-        registerWithItem("brown_clay", B_CLAY, natureGroup);
-        //registerWithItem("muddy_reed_roots", B_ROOTS, natureGroup);
-        registerWithItem("volc_ash", VOLCANIC_ASH, natureGroup);
-        registerWithItem("volc_stone", VOLCANIC_STONE, natureGroup);
-        registerWithItem("scalding_volc_stone", SCALDING_VOLC, natureGroup);
-
-        registerWithItem("mixed_ore", MIXED_ORE, natureGroup);
-        registerWithItem("saltpeter_ore", SALTPETER_ORE, natureGroup);
-        //registerWithItem("fossil_ore", FOSSIL_ORE, natureGroup);
-        //registerWithItem("frozen_fossil_ore", FROZEN_FOSSIL, natureGroup);
-        //registerWithItem("fossilized_sand_cicada", CICADA, natureGroup);
-
-        registerWithItem("glacial_stone", GLACIAL_STONE, natureGroup);
-        registerWithItem("scalding_stone", SCALDING_STONE, natureGroup);
-        registerWithItem("scalding_sandstone", SCALDING_SANDSTONE, natureGroup);
-        registerWithItem("desert_gravel", DESERT_GRAVEL, natureGroup);
-        registerWithItem("bleached_gravel", BLEACHED_GRAVEL, natureGroup);
-
-        registerWithItem("jungle_stone", JUNGLE, natureGroup);
-        registerWithItem("jungle_cobble", JUNGLE_COBBLE, natureGroup);
-        registerWithItem("jungle_sporey", JUNGLE_SPOREY, natureGroup);
-        registerWithItem("jungle_mossy", JUNGLE_MOSSY, natureGroup);
-        registerWithItem("stone_mossy", STONE_MOSSY, natureGroup);
-        
-        registerWithItem("oceanstone", OCEAN_STONE, natureGroup);
-        registerWithItem("swampstone", SWAMP_STONE, natureGroup);
-        registerWithItem("darkstone", DARK_STONE, natureGroup);
-        registerWithItem("taigastone", TAIGA_STONE, natureGroup);
-        
-        registerWithItem("salt_ore", SALT_ORE, natureGroup);
-        registerWithItem("salt_block", SALT_BLOCK, natureGroup);
-        registerWithItem("nether_salt", NETHER_SALT, natureGroup);
-        registerWithItem("nether_coal_ore", NETHER_COAL_ORE, natureGroup);
+        ValleyMain.LOGGER.info("Stone blocks has been initialized");
     }
 }

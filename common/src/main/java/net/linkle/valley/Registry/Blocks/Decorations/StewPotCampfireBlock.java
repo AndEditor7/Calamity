@@ -1,6 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Decorations;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.linkle.valley.Registry.Commons.HorizontalWithWaterBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -17,10 +16,9 @@ public class StewPotCampfireBlock extends HorizontalWithWaterBlock {
     protected static final VoxelShape SHAPE = Block.createCuboidShape(4, -3, 4, 12, 2, 12);
 
     public StewPotCampfireBlock() {
-        super(FabricBlockSettings.of(Material.WOOD)
-                .breakByHand(true)
+        super(Settings.of(Material.WOOD)
                 .sounds(BlockSoundGroup.WOOD)
-                .strength(0.5f, 2.5f).collidable(false));
+                .strength(0.5f, 2.5f).noCollision());
         setDefaultState(stateManager.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));
     }
 

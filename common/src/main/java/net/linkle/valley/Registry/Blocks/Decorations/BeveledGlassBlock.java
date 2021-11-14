@@ -1,7 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Decorations;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.linkle.valley.Registry.Commons.DirectionBlockWithWater;
 import net.minecraft.block.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
@@ -20,9 +18,7 @@ public class BeveledGlassBlock extends DirectionBlockWithWater {
     protected static final VoxelShape DOWN_SHAPE;
 
     public BeveledGlassBlock() {
-        super(FabricBlockSettings.of(Material.METAL)
-                .breakByTool(FabricToolTags.PICKAXES)
-                .breakByHand(false)
+        super(Block.Settings.of(Material.METAL)
                 .sounds(BlockSoundGroup.GLASS).nonOpaque()
                 .strength(1.5f, 5f));
         setDefaultState(stateManager.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));

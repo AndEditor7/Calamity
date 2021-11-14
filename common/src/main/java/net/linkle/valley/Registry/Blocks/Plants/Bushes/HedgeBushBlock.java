@@ -11,7 +11,6 @@ import java.util.Random;
 
 import static net.linkle.valley.Registry.Initializers.Plants.HEDGE;
 import static net.linkle.valley.Registry.Initializers.Furniture.HANGING;
-import static net.linkle.valley.Registry.Initializers.FurnitureCont.PLANTER;
 
 public class HedgeBushBlock extends PlantBlock {
     protected static final VoxelShape SHAPE = Block.createCuboidShape(1.0D, 1.0D, 1.0D, 15.0D, 15.0D, 15.0D);
@@ -76,7 +75,6 @@ public class HedgeBushBlock extends PlantBlock {
                 block == Blocks.SOUL_SAND ||
                 block == Blocks.SNOW ||
                 block == HANGING ||
-                block == PLANTER ||
                 block == HEDGE ||
                 block == Blocks.SOUL_SOIL;
     }

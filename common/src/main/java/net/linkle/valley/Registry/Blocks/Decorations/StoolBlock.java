@@ -1,6 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Decorations;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.linkle.valley.Registry.Commons.HorizontalWithWaterBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -17,8 +16,7 @@ public class StoolBlock extends HorizontalWithWaterBlock {
     private static final VoxelShape SHAPE = Block.createCuboidShape(2, 0, 2, 14, 8, 14);
 
     public StoolBlock() {
-        super(FabricBlockSettings.of(Material.WOOD)
-                .breakByHand(true)
+        super(Settings.of(Material.WOOD)
                 .sounds(BlockSoundGroup.WOOD)
                 .strength(1f, 2f));
         setDefaultState(stateManager.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));

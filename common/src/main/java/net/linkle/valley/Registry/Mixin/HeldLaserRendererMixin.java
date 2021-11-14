@@ -24,7 +24,7 @@ import net.minecraft.util.math.Vector4f;
 @Environment(EnvType.CLIENT)
 @Mixin(HeldItemRenderer.class)
 class HeldLaserRendererMixin {
-	
+	/*
 	@Inject(method = "renderFirstPersonItem", at = @At("HEAD"))
 	void renderLaserItem(AbstractClientPlayerEntity player, float tickDelta, float pitch, Hand hand,
 			float swingProgress, ItemStack item, float equipProgress, MatrixStack matrices,
@@ -55,4 +55,5 @@ class HeldLaserRendererMixin {
             .normal(vec3.getX(), vec3.getY(), vec3.getZ()).next(); 
         }
 	}
+	*/
 }

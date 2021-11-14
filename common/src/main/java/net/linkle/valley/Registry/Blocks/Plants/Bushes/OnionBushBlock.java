@@ -26,7 +26,6 @@ import java.util.Random;
 
 import static net.linkle.valley.Registry.Initializers.Plants.ONION;
 import static net.linkle.valley.Registry.Initializers.Furniture.HANGING;
-import static net.linkle.valley.Registry.Initializers.FurnitureCont.PLANTER;
 
 public class OnionBushBlock extends PlantBlock implements Fertilizable {
     public static final IntProperty AGE;
@@ -40,7 +39,7 @@ public class OnionBushBlock extends PlantBlock implements Fertilizable {
 
     @Environment(EnvType.CLIENT)
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
-        return new ItemStack(ONION);
+        return new ItemStack(ONION.get());
     }
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -70,7 +69,7 @@ public class OnionBushBlock extends PlantBlock implements Fertilizable {
             return ActionResult.PASS;
         } else if (i > 2) {
             int j = 1 + world.random.nextInt(2);
-            dropStack(world, pos, new ItemStack(ONION, 1));
+            dropStack(world, pos, new ItemStack(ONION.get(), 1));
             world.playSound(null, pos, SoundEvents.ITEM_CROP_PLANT, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
             world.setBlockState(pos, state.with(AGE, 1), 2);
             return ActionResult.success(world.isClient);
@@ -124,7 +123,6 @@ public class OnionBushBlock extends PlantBlock implements Fertilizable {
                 block == Blocks.PODZOL ||
                 block == Blocks.FARMLAND ||
                 block == Blocks.GRAVEL ||
-                block == PLANTER ||
                 block == Blocks.SOUL_SAND ||
                 block == HANGING ||
                 block == Blocks.SOUL_SOIL;

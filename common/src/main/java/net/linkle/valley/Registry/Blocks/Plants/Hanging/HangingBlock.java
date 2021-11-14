@@ -1,6 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Plants.Hanging;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.linkle.valley.Registry.Commons.HorizontalWithWaterBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -17,8 +16,7 @@ public class HangingBlock extends HorizontalWithWaterBlock {
     private static final VoxelShape SHAPE = Block.createCuboidShape(3, 12, 3, 13, 17, 13);
     
     public HangingBlock() {
-        super(FabricBlockSettings.of(Material.GLASS)
-                .breakByHand(true)
+        super(Settings.of(Material.GLASS)
                 .sounds(BlockSoundGroup.GLASS)
                 .strength(0.5f, 2.5f));
         setDefaultState(stateManager.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));

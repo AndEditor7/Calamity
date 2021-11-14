@@ -26,7 +26,7 @@ public class PuffCropBlock extends CropBlock {
     }
 
     public ItemConvertible getSeedsItem() {
-        return PUFF_SEEDS;
+        return PUFF_SEEDS.get();
     }
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {

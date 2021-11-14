@@ -16,7 +16,7 @@ public class MeadBase extends Item {
 
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
         ItemStack itemStack = super.finishUsing(stack, world, user);
-        return user instanceof PlayerEntity && ((PlayerEntity)user).getAbilities().creativeMode ? itemStack : new ItemStack(MUG_BLOCK);
+        return user instanceof PlayerEntity && ((PlayerEntity)user).getAbilities().creativeMode ? itemStack : new ItemStack(MUG_BLOCK.get());
     }
 
     public UseAction getUseAction(ItemStack stack) {

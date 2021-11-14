@@ -1,32 +1,41 @@
 package net.linkle.valley.Registry.Utils;
 
-import static net.linkle.valley.ValleyMain.MOD_ID;
+import java.util.function.Supplier;
+import java.util.function.ToIntFunction;
 
+import dev.architectury.registry.registries.RegistrySupplier;
+import net.linkle.valley.Registry.Registies;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class Util {
-    public static Item register(String ID, Item item) {
-        return Registry.register(Registry.ITEM, new Identifier(MOD_ID, ID), item);
+    public static RegistrySupplier<Item> registerItem(String ID, Supplier<Item> item) {
+        return Registies.register(ID, item, Item.class);
     }
     
-    public static Block register(String ID, Block block) {
-        return Registry.register(Registry.BLOCK, new Identifier(MOD_ID, ID), block);
+    public static RegistrySupplier<Block> registerBlock(String ID, Supplier<Block> block) {
+        return Registies.register(ID, block, Block.class);
     }
     
-    public static void registerWithItem(String ID, Block block, Item.Settings settings) {
-        var id = new Identifier(MOD_ID, ID);
-        Registry.register(Registry.BLOCK, id, block);
-        Registry.register(Registry.ITEM, id, new BlockItem(block, settings));
+    public static RegistrySupplier<Block> registerWithItem(String ID, Supplier<Block> block, Item.Settings settings) {
+        var supplier = registerBlock(ID, block);
+        if (settings == null) {
+            System.out.println("Null found!");
+        }
+        registerItem(ID, () -> new BlockItem(supplier.get(), settings));
+        return supplier;
     }
     
     public static boolean inWater(ItemPlacementContext context) {
         var state = context.getWorld().getFluidState(context.getBlockPos());
         return state.getFluid() == Fluids.WATER;
+    }
+    
+    public static ToIntFunction<BlockState> toInt(int a) {
+        return s -> a;
     }
 }

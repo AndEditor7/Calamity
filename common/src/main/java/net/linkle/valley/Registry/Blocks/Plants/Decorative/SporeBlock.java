@@ -1,7 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Plants.Decorative;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
 import net.minecraft.block.OreBlock;
@@ -17,9 +15,7 @@ import static net.minecraft.block.Blocks.SPORE_BLOSSOM;
 public class SporeBlock extends OreBlock {
 
     public SporeBlock() {
-        super(FabricBlockSettings.of(Material.STONE)
-                .requiresTool()
-                .breakByTool(FabricToolTags.PICKAXES, 1)
+        super(Settings.of(Material.STONE)
                 .ticksRandomly()
                 .sounds(BlockSoundGroup.STONE)
                 .strength(3, 3f));

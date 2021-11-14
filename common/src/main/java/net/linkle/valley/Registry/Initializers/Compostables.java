@@ -1,9 +1,8 @@
 package net.linkle.valley.Registry.Initializers;
 
-import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 
-import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
+import static net.linkle.valley.expect.ExpectHelper.registerCompostableItem;
 
 /** Registering items for composer block */
 public class Compostables {
@@ -14,84 +13,74 @@ public class Compostables {
         float levelVery = 0.85f; // blocks.
         float levelUltra = 1.0f; // specialties.
 
-        registerItem(Plants.RICE_SEEDLINGS, levelLow);
-        registerItem(Plants.TOMATO_BUSH, levelLow);
-        registerItem(Plants.SPICY_BERRY_BUSH, levelLow);
-        registerItem(Plants.BITTER_BERRY_BUSH, levelLow);
-        registerItem(Plants.HOLLY_BUSH, levelLow);
-        registerItem(Plants.APPLE_SAPLING, levelLow);
-        registerItem(Plants.APPLE_LEAVES, levelLow);
-        registerItem(Plants.APPLE_LEAVES_EMPTY, levelLow);
-        registerItem(Plants.SMALL_CACTUS, levelLow);
-        registerItem(Crops.PUFF_SEEDS, levelLow);
-        registerItem(Crops.MANDRAKE_SEEDS, levelLow);
-        registerItem(Crops.GREEN_BEAN, levelLow);
-        registerItem(Crops.GB_SEEDS, levelLow);
-        registerItem(MiscItems.FIBER, levelLow);
-        registerItem(MiscItems.MOSS_BALL, levelLow);
-        registerItem(MiscItems.TURF_ITEM, levelLow);
-        registerItem(Items.STICK, levelLow);
+        registerCompostableItem(Plants.RICE_SEEDLINGS.get(), levelLow);
+        registerCompostableItem(Plants.TOMATO_BUSH.get(), levelLow);
+        registerCompostableItem(Plants.SPICY_BERRY_BUSH.get(), levelLow);
+        registerCompostableItem(Plants.BITTER_BERRY_BUSH.get(), levelLow);
+        registerCompostableItem(Plants.HOLLY_BUSH.get(), levelLow);
+        registerCompostableItem(Plants.APPLE_SAPLING.get(), levelLow);
+        registerCompostableItem(Plants.APPLE_LEAVES.get(), levelLow);
+        registerCompostableItem(Plants.APPLE_LEAVES_EMPTY.get(), levelLow);
+        registerCompostableItem(Plants.SMALL_CACTUS.get(), levelLow);
+        registerCompostableItem(Crops.PUFF_SEEDS.get(), levelLow);
+        registerCompostableItem(Crops.MANDRAKE_SEEDS.get(), levelLow);
+        registerCompostableItem(Crops.GREEN_BEAN.get(), levelLow);
+        registerCompostableItem(Crops.GB_SEEDS.get(), levelLow);
+        registerCompostableItem(MiscItems.FIBER.get(), levelLow);
+        registerCompostableItem(MiscItems.MOSS_BALL.get(), levelLow);
+        registerCompostableItem(MiscItems.TURF_ITEM.get(), levelLow);
+        registerCompostableItem(Items.STICK, levelLow);
 
-        registerItem(Plants.MOREL, levelMed);
-        registerItem(Plants.BUSH, levelMed);
-        registerItem(Plants.SNOW_YAM, levelMed);
-        registerItem(Crops.SNOW_YAM_ITEM, levelMed);
-        registerItem(Crops.WINTER_ROOT_ITEM, levelMed);
-        registerItem(Plants.SNOW_BUSH, levelMed);
-        registerItem(Plants.WINTER_ROOT, levelMed);
-        registerItem(Plants.BUSH_ALIVE, levelMed);
-        registerItem(Plants.BUSH_ALIVE_TALL, levelMed);
-        registerItem(Plants.FERNBUSH, levelMed);
-        registerItem(Plants.JUNGLE_CAP, levelMed);
-        registerItem(Plants.ORANGE_FERN, levelMed);
-        registerItem(Plants.SPROUT, levelMed);
-        registerItem(Plants.MAIZE_CROP, levelMed);
-        registerItem(Plants.REED_BLOCK, levelMed);
-        registerItem(Plants.MINER_BUSH, levelMed);
-        registerItem(Plants.ONION, levelMed);
-        registerItem(Plants.MOSSY_VINE, levelMed);
-        registerItem(Plants.SWAMP_BUSH, levelMed);
-        registerItem(Plants.HEDGE, levelMed);
-        registerItem(Crops.MANDRAKE, levelMed);
-        registerItem(Plants.BUSH_DEAD_TALL, levelMed);
-        registerItem(Plants.TUMBLE_WEED, levelMed);
-        registerItem(Plants.APPLE_LEAVES_EMPTY, levelMed);
-        registerItem(FoodAndCooking.WORM, levelMed);
+        registerCompostableItem(Plants.MOREL.get(), levelMed);
+        registerCompostableItem(Plants.BUSH.get(), levelMed);
+        registerCompostableItem(Crops.SNOW_YAM_ITEM.get(), levelMed);
+        registerCompostableItem(Crops.WINTER_ROOT_ITEM.get(), levelMed);
+        registerCompostableItem(Plants.SNOW_BUSH.get(), levelMed);
+        registerCompostableItem(Plants.BUSH_ALIVE.get(), levelMed);
+        registerCompostableItem(Plants.FERNBUSH.get(), levelMed);
+        registerCompostableItem(Plants.JUNGLE_CAP.get(), levelMed);
+        registerCompostableItem(Plants.ORANGE_FERN.get(), levelMed);
+        registerCompostableItem(Plants.SPROUT.get(), levelMed);
+        registerCompostableItem(Plants.MAIZE_CROP.get(), levelMed);
+        registerCompostableItem(Plants.REED_BLOCK.get(), levelMed);
+        registerCompostableItem(Plants.MINER_BUSH.get(), levelMed);
+        registerCompostableItem(Plants.ONION.get(), levelMed);
+        registerCompostableItem(Plants.MOSSY_VINE.get(), levelMed);
+        registerCompostableItem(Plants.SWAMP_BUSH.get(), levelMed);
+        registerCompostableItem(Plants.HEDGE.get(), levelMed);
+        registerCompostableItem(Crops.MANDRAKE.get(), levelMed);
+        registerCompostableItem(Plants.TUMBLE_WEED.get(), levelMed);
+        registerCompostableItem(Plants.APPLE_LEAVES_EMPTY.get(), levelMed);
+        registerCompostableItem(FoodAndCooking.WORM.get(), levelMed);
 
-        registerItem(MiscItems.MULCH, levelHigh);
-        registerItem(Plants.ROSEBUSH, levelHigh);
-        registerItem(Plants.LILACBUSH, levelHigh);
-        registerItem(Plants.PEONYBUSH, levelHigh);
-        registerItem(Plants.FERNBUSH, levelHigh);
-        registerItem(Plants.WEAPING_SWAMP_WILLOW, levelHigh);
-        registerItem(Plants.REDWOOD_SORREL, levelHigh);
-        registerItem(Plants.CROCUS, levelHigh);
-        registerItem(Plants.DANDELION_PUFF, levelHigh);
-        registerItem(Plants.LAVENDER, levelHigh);
-        registerItem(Plants.LAVENDER_SPRIG, levelHigh);
-        registerItem(Plants.SWAMP_RIBBON, levelHigh);
-        registerItem(Plants.ROSE_SPRIG, levelHigh);
-        registerItem(Plants.BLACK_DAHLIA, levelHigh);
-        registerItem(Plants.ICE_ROSE, levelHigh);
-        registerItem(Plants.WILD_CARROT, levelHigh);
-        registerItem(Plants.WILD_POTATO, levelHigh);
-        registerItem(Plants.WILD_BEET, levelHigh);
-        registerItem(Plants.WILD_WHEAT, levelHigh);
-        registerItem(Plants.ORANGE_BEAUTY, levelHigh);
-        registerItem(Plants.JUNGLE_BUSH, levelHigh);
-        registerItem(Plants.JUNGLE_BUSH, levelHigh);
-        registerItem(Crops.COOKED_MANDRAKE, levelHigh);
-        registerItem(Items.EGG, levelHigh);
-        registerItem(MiscItems.DUCK_EGG, levelHigh);
-        registerItem(Items.COD, levelHigh);
-        registerItem(Items.SALMON, levelHigh);
-        registerItem(Items.TROPICAL_FISH, levelHigh);
-        registerItem(Furniture.FIBER_BALE, levelHigh);
-
-        registerItem(Plants.AMERANTH_BLOCK, levelVery);
-    }
-    
-    private static void registerItem(ItemConvertible item, float chance) {
-        CompostingChanceRegistry.INSTANCE.add(item, chance);
+        registerCompostableItem(MiscItems.MULCH.get(), levelHigh);
+        registerCompostableItem(Plants.ROSEBUSH.get(), levelHigh);
+        registerCompostableItem(Plants.LILACBUSH.get(), levelHigh);
+        registerCompostableItem(Plants.PEONYBUSH.get(), levelHigh);
+        registerCompostableItem(Plants.FERNBUSH.get(), levelHigh);
+        registerCompostableItem(Plants.WEAPING_SWAMP_WILLOW.get(), levelHigh);
+        registerCompostableItem(Plants.REDWOOD_SORREL.get(), levelHigh);
+        registerCompostableItem(Plants.CROCUS.get(), levelHigh);
+        registerCompostableItem(Plants.DANDELION_PUFF.get(), levelHigh);
+        registerCompostableItem(Plants.LAVENDER.get(), levelHigh);
+        registerCompostableItem(Plants.LAVENDER_SPRIG.get(), levelHigh);
+        registerCompostableItem(Plants.SWAMP_RIBBON.get(), levelHigh);
+        registerCompostableItem(Plants.ROSE_SPRIG.get(), levelHigh);
+        registerCompostableItem(Plants.BLACK_DAHLIA.get(), levelHigh);
+        registerCompostableItem(Plants.ICE_ROSE.get(), levelHigh);
+        registerCompostableItem(Plants.WILD_CARROT.get(), levelHigh);
+        registerCompostableItem(Plants.WILD_POTATO.get(), levelHigh);
+        registerCompostableItem(Plants.WILD_BEET.get(), levelHigh);
+        registerCompostableItem(Plants.WILD_WHEAT.get(), levelHigh);
+        registerCompostableItem(Plants.ORANGE_BEAUTY.get(), levelHigh);
+        registerCompostableItem(Plants.JUNGLE_BUSH.get(), levelHigh);
+        registerCompostableItem(Plants.JUNGLE_BUSH.get(), levelHigh);
+        registerCompostableItem(Crops.COOKED_MANDRAKE.get(), levelHigh);
+        registerCompostableItem(Items.EGG, levelHigh);
+        registerCompostableItem(MiscItems.DUCK_EGG.get(), levelHigh);
+        registerCompostableItem(Items.COD, levelHigh);
+        registerCompostableItem(Items.SALMON, levelHigh);
+        registerCompostableItem(Items.TROPICAL_FISH, levelHigh);
+        registerCompostableItem(Furniture.FIBER_BALE.get(), levelHigh);
     }
 }

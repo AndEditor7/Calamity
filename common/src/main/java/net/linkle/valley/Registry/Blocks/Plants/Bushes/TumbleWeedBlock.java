@@ -11,7 +11,6 @@ import java.util.Iterator;
 import java.util.Random;
 
 import static net.linkle.valley.Registry.Initializers.Furniture.HANGING;
-import static net.linkle.valley.Registry.Initializers.FurnitureCont.PLANTER;
 
 public class TumbleWeedBlock extends PlantBlock {
     protected static final VoxelShape SHAPE = Block.createCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D);
@@ -82,7 +81,6 @@ public class TumbleWeedBlock extends PlantBlock {
                 block == Blocks.SOUL_SAND ||
                 block == Blocks.SNOW ||
                 block == HANGING ||
-                block == PLANTER ||
                 block == Blocks.SOUL_SOIL;
     }
 }

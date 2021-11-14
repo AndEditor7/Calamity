@@ -4,16 +4,11 @@ import net.minecraft.block.*;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldView;
 
 import java.util.Iterator;
 import java.util.Random;
-
-import static net.linkle.valley.Registry.Initializers.Furniture.HANGING;
-import static net.linkle.valley.Registry.Initializers.FurnitureCont.PLANTER;
 
 public class GiantShroomBlock extends PlantBlock {
 
@@ -24,7 +19,6 @@ public class GiantShroomBlock extends PlantBlock {
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (random.nextInt(25) == 0) {
             int i = 5;
-            boolean j = true;
 
             Iterator var7 = BlockPos.iterate(pos.add(-4, -1, -4), pos.add(4, 1, 4)).iterator();
 

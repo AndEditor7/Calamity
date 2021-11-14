@@ -1,7 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Plants.Decorative;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.BlockPos;
@@ -9,15 +7,11 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
-import static net.linkle.valley.Registry.Initializers.FurnitureCont.PLANTER;
-
 public class SnowBush extends PlantBlock {
     protected static final VoxelShape SHAPE = Block.createCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
 
     public SnowBush() {
-        super(FabricBlockSettings.of(Material.LEAVES)
-                .breakByTool(FabricToolTags.SHEARS)
-                .breakByHand(true)
+        super(Settings.of(Material.LEAVES)
                 .sounds(BlockSoundGroup.SNOW)
                 .strength(0, 0.5f));
     }
@@ -35,7 +29,6 @@ public class SnowBush extends PlantBlock {
                 block == Blocks.FARMLAND ||
                 block == Blocks.GRAVEL ||
                 block == Blocks.SOUL_SAND ||
-                block == PLANTER ||
                 block == Blocks.SOUL_SOIL;
     }
 

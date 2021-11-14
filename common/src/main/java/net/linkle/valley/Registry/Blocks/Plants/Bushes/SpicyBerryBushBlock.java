@@ -31,7 +31,6 @@ import java.util.Random;
 
 import static net.linkle.valley.Registry.Initializers.Plants.SPICY_BERRY_BUSH;
 import static net.linkle.valley.Registry.Initializers.Furniture.HANGING;
-import static net.linkle.valley.Registry.Initializers.FurnitureCont.PLANTER;
 
 public class SpicyBerryBushBlock extends PlantBlock implements Fertilizable {
     public static final IntProperty AGE;
@@ -45,7 +44,7 @@ public class SpicyBerryBushBlock extends PlantBlock implements Fertilizable {
 
     @Environment(EnvType.CLIENT)
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
-        return new ItemStack(SPICY_BERRY_BUSH);
+        return new ItemStack(SPICY_BERRY_BUSH.get());
     }
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -89,7 +88,7 @@ public class SpicyBerryBushBlock extends PlantBlock implements Fertilizable {
             return ActionResult.PASS;
         } else if (i > 1) {
             int j = 1 + world.random.nextInt(2);
-            dropStack(world, pos, new ItemStack(SPICY_BERRY_BUSH, j + (bl ? 1 : 0)));
+            dropStack(world, pos, new ItemStack(SPICY_BERRY_BUSH.get(), j + (bl ? 1 : 0)));
             world.playSound(null, pos, SoundEvents.ITEM_CROP_PLANT, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
             world.setBlockState(pos, state.with(AGE, 1), 2);
             return ActionResult.success(world.isClient);
@@ -141,7 +140,6 @@ public class SpicyBerryBushBlock extends PlantBlock implements Fertilizable {
                 block == Blocks.WARPED_NYLIUM ||
                 block == Blocks.NETHERRACK ||
                 block == HANGING ||
-                block == PLANTER ||
                 block == Blocks.CRIMSON_NYLIUM;
     }
 }

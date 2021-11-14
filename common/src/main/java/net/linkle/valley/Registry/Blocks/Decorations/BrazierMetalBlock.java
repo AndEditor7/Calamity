@@ -1,7 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Decorations;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.linkle.valley.Registry.Commons.BlockWithWater;
 import net.minecraft.block.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
@@ -21,10 +19,9 @@ public class BrazierMetalBlock extends BlockWithWater {
     protected static final VoxelShape BRAZIER_SHAPE;
 
     public BrazierMetalBlock() {
-        super(FabricBlockSettings.of(Material.METAL)
-                .breakByHand(true).breakByTool(FabricToolTags.PICKAXES)
-                .sounds(BlockSoundGroup.METAL).luminance(13).nonOpaque()
-                .strength(1.0f, 1.0f));
+        super(Block.Settings.of(Material.METAL)
+                .sounds(BlockSoundGroup.METAL).luminance(state -> 13)
+                .strength(1.0f, 1.0f).nonOpaque());
     }
 
     @Nullable

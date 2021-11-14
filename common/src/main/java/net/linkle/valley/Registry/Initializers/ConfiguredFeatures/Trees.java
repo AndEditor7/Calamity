@@ -1,7 +1,5 @@
 package net.linkle.valley.Registry.Initializers.ConfiguredFeatures;
 
-import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
@@ -28,7 +26,7 @@ import static net.linkle.valley.Registry.Initializers.Plants.*;
 import static net.linkle.valley.ValleyMain.MOD_ID;
 
 public class Trees {
-
+    /*
 	private static final TreeFeatureConfig APPLE_TREE_CONFIG = new TreeFeatureConfig.Builder(
 			new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
 			new StraightTrunkPlacer(4, 2, 0),
@@ -53,4 +51,5 @@ public class Trees {
 		
 		BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FLOWER_FOREST), GenerationStep.Feature.VEGETAL_DECORATION, appleTree);
 	}
+	*/
 }

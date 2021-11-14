@@ -1,6 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Decorations;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.linkle.valley.Registry.Commons.HorizontalWithWaterBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -18,10 +17,9 @@ public class StatueBlock extends HorizontalWithWaterBlock {
     private static final VoxelShape SHAPE = Block.createCuboidShape(4, 0, 4, 12, 32, 12);
 
     public StatueBlock(boolean isGlowing) {
-        super(FabricBlockSettings.of(Material.WOOD)
-                .breakByHand(true)
+        super(Settings.of(Material.WOOD)
                 .sounds(BlockSoundGroup.WOOD).nonOpaque()
-                .strength(1f, 2f).luminance(isGlowing ? 13 : 0));
+                .strength(1f, 2f).luminance(s -> isGlowing ? 13 : 0));
         setDefaultState(stateManager.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));
     }
 

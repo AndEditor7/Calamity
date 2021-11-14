@@ -2,7 +2,6 @@ package net.linkle.valley.Registry.Blocks.Decorations;
 
 import java.util.List;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.linkle.valley.Registry.Commons.HorizontalWithWaterBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -35,8 +34,8 @@ public class KegBlock extends HorizontalWithWaterBlock {
     public static final VoxelShape SHAPE = Block.createCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 15.0D, 15.0D);
 
     public KegBlock() {
-        super(FabricBlockSettings.of(Material.WOOD).nonOpaque()
-                .breakByHand(true)
+        super(Block.Settings.of(Material.WOOD)
+                .nonOpaque()
                 .sounds(BlockSoundGroup.WOOD)
                 .strength(1.0f, 1.0f));
         setDefaultState(stateManager.getDefaultState().with(FACING, Direction.NORTH).with(WATERLOGGED, false));

@@ -1,7 +1,5 @@
 package net.linkle.valley.Registry.Initializers;
 
-import static net.linkle.valley.Registry.Utils.Util.register;
-
 import net.linkle.valley.Registry.WeaponsAndTools.Hatchets.*;
 import net.linkle.valley.Registry.WeaponsAndTools.Knives.*;
 import net.linkle.valley.Registry.WeaponsAndTools.OneOffs.*;
@@ -9,30 +7,34 @@ import net.linkle.valley.Registry.WeaponsAndTools.RGRest.*;
 import net.linkle.valley.Registry.WeaponsAndTools.Sickles.*;
 import net.linkle.valley.Registry.WeaponsAndTools.Viking.*;
 
+import static net.linkle.valley.Registry.Utils.Util.registerItem;
+
 public class WeaponsAndTools {
+    
+    
 
     public static void initialize() {
 
         //Branch
-        register("tree_branch", new BranchBase(new BranchMaterial()));
+        registerItem("tree_branch", () -> new BranchBase(new BranchMaterial()));
 
         //Sharp Flint Rock
-        register("flint_rock", new FlintBaseRock(new FlintToolMaterialRock()));
+        registerItem("flint_rock", () -> new FlintBaseRock(new FlintToolMaterialRock()));
 
         //Bone Knife
-        register("bone_knife", new BoneBaseKnife(new BoneToolMaterialKnife()));
+        registerItem("bone_knife", () -> new BoneBaseKnife(new BoneToolMaterialKnife()));
 
         //Climbing Axe
-        register("climbing_axe", new ClimbingAxeBase(new ClimingAxeToolMaterial()));
+        registerItem("climbing_axe", () -> new ClimbingAxeBase(new ClimingAxeToolMaterial()));
 
         //Rock Pick
         //register("rock_pick", new RockPickBase(new RockPickToolMaterial()));
 
         //Ice Tongs
-        register("tongs", new TongsBase(new TongsToolMaterial()));
+        registerItem("tongs", () -> new TongsBase(new TongsToolMaterial()));
 
         //Lumber Axe
-        register("lumber_axe", new LumberAxeBase(new LumberAxeToolMaterial()));
+        registerItem("lumber_axe", () -> new LumberAxeBase(new LumberAxeToolMaterial()));
 
         //Sieve
         //register("hand_sieve", new SieveBase(new SieveToolMaterial()));
@@ -48,15 +50,15 @@ public class WeaponsAndTools {
 
         //Viking Tools
         //register("viking_great_axe", new VikingGreatAxeBase(new VikingToolMaterial()));
-        register("viking_hatchet", new VikingHatchetBase(new VikingToolMaterial()));
-        register("viking_knife", new VikingKnifeBase(new VikingToolMaterial()));
+        registerItem("viking_hatchet", () -> new VikingHatchetBase(new VikingToolMaterial()));
+        registerItem("viking_knife", () -> new VikingKnifeBase(new VikingToolMaterial()));
         //register("viking_war_axe", new VikingWarAxeBase(new VikingToolMaterial()));
-        register("viking_hoe", new VikingHoeBase(new VikingToolMaterial()));
-        register("viking_shovel", new VikingShovelBase(new VikingToolMaterial()));
-        register("viking_hammer", new VikingHammerBase(new VikingToolMaterial()));
-        register("viking_pickaxe", new VikingPickBase(new VikingToolMaterial()));
-        register("viking_sword", new VikingSwordBase(new VikingToolMaterial()));
-        register("viking_spear", new VikingSpearBase(new VikingToolMaterial()));
+        registerItem("viking_hoe", () -> new VikingHoeBase(new VikingToolMaterial()));
+        registerItem("viking_shovel", () -> new VikingShovelBase(new VikingToolMaterial()));
+        registerItem("viking_hammer", () -> new VikingHammerBase(new VikingToolMaterial()));
+        registerItem("viking_pickaxe", () -> new VikingPickBase(new VikingToolMaterial()));
+        registerItem("viking_sword", () -> new VikingSwordBase(new VikingToolMaterial()));
+        registerItem("viking_spear", () -> new VikingSpearBase(new VikingToolMaterial()));
 
         //Witch's Tools
         //register("witch_wand", new WitchWandBase(new WitchToolMaterialKnife()));
@@ -64,38 +66,38 @@ public class WeaponsAndTools {
         //register("witch_dagger", new WitchKnifeBase(new WitchToolMaterialKnife()));
 
         //Druid Staff
-        register("druid_staff", new DruidStaffBase(new DruidToolMaterialStaff()));
+        registerItem("druid_staff", () -> new DruidStaffBase(new DruidToolMaterialStaff()));
 
         //Knives
-        register("wood_knife", new WoodKnifeBase(new WoodToolMaterialKnife()));
-        register("stone_knife", new StoneKnifeBase(new StoneToolMaterialKnife()));
-        register("golden_knife", new GoldKnifeBase(new GoldenToolMaterialKnife()));
-        register("iron_knife", new IronKnifeBase(new IronToolMaterialKnife()));
-        register("rg_knife", new RGKnifeBase(new RGToolMaterialKnife()));
-        register("diamond_knife", new DiamondKnifeBase(new DiamondToolMaterialKnife()));
-        register("netherite_knife", new NetheriteKnifeBase(new NetheriteToolMaterialKnife()));
+        registerItem("wood_knife", () -> new WoodKnifeBase(new WoodToolMaterialKnife()));
+        registerItem("stone_knife", () -> new StoneKnifeBase(new StoneToolMaterialKnife()));
+        registerItem("golden_knife", () -> new GoldKnifeBase(new GoldenToolMaterialKnife()));
+        registerItem("iron_knife", () -> new IronKnifeBase(new IronToolMaterialKnife()));
+        registerItem("rg_knife", () -> new RGKnifeBase(new RGToolMaterialKnife()));
+        registerItem("diamond_knife", () -> new DiamondKnifeBase(new DiamondToolMaterialKnife()));
+        registerItem("netherite_knife", () -> new NetheriteKnifeBase(new NetheriteToolMaterialKnife()));
         //Sickles
-        register("wood_sickle", new WoodSickleBase(new WoodToolMaterialSickle()));
-        register("stone_sickle", new StoneSickleBase(new StoneToolMaterialSickle()));
-        register("golden_sickle", new GoldSickleBase(new GoldenToolMaterialSickle()));
-        register("iron_sickle", new IronSickleBase(new IronToolMaterialSickle()));
-        register("rg_sickle", new RGSickleBase(new RGToolMaterialSickle()));
-        register("diamond_sickle", new DiamondSickleBase(new DiamondToolMaterialSickle()));
-        register("netherite_sickle", new NetheriteSickleBase(new NetheriteToolMaterialSickle()));
+        registerItem("wood_sickle", () -> new WoodSickleBase(new WoodToolMaterialSickle()));
+        registerItem("stone_sickle", () -> new StoneSickleBase(new StoneToolMaterialSickle()));
+        registerItem("golden_sickle", () -> new GoldSickleBase(new GoldenToolMaterialSickle()));
+        registerItem("iron_sickle", () -> new IronSickleBase(new IronToolMaterialSickle()));
+        registerItem("rg_sickle", () -> new RGSickleBase(new RGToolMaterialSickle()));
+        registerItem("diamond_sickle", () -> new DiamondSickleBase(new DiamondToolMaterialSickle()));
+        registerItem("netherite_sickle", () -> new NetheriteSickleBase(new NetheriteToolMaterialSickle()));
         //Hatchets
-        register("wood_hatchet", new WoodHatchetBase(new WoodToolMaterialHatchet()));
-        register("stone_hatchet", new StoneHatchetBase(new StoneToolMaterialHatchet()));
-        register("golden_hatchet", new GoldHatchetBase(new GoldenToolMaterialHatchet()));
-        register("iron_hatchet", new IronHatchetBase(new IronToolMaterialHatchet()));
-        register("rg_hatchet", new RGHatchetBase(new RGToolMaterialHatchet()));
-        register("diamond_hatchet", new DiamondHatchetBase(new DiamondToolMaterialHatchet()));
-        register("netherite_hatchet", new NetheriteHatchetBase(new NetheriteToolMaterialHatchet()));
+        registerItem("wood_hatchet", () -> new WoodHatchetBase(new WoodToolMaterialHatchet()));
+        registerItem("stone_hatchet", () -> new StoneHatchetBase(new StoneToolMaterialHatchet()));
+        registerItem("golden_hatchet", () -> new GoldHatchetBase(new GoldenToolMaterialHatchet()));
+        registerItem("iron_hatchet", () -> new IronHatchetBase(new IronToolMaterialHatchet()));
+        registerItem("rg_hatchet", () -> new RGHatchetBase(new RGToolMaterialHatchet()));
+        registerItem("diamond_hatchet", () -> new DiamondHatchetBase(new DiamondToolMaterialHatchet()));
+        registerItem("netherite_hatchet", () -> new NetheriteHatchetBase(new NetheriteToolMaterialHatchet()));
         //Rose Gold Tools
-        register("rg_shovel", new RGShovelBase(new RGToolMaterialShovel()));
-        register("rg_pickaxe", new RGPickaxeBase(new RGToolMaterialPickaxe()));
-        register("rg_axe", new RGAxeBase(new RGToolMaterialAxe()));
-        register("rg_hoe", new RGHoeBase(new RGToolMaterialHoe()));
-        register("rg_sword", new RGSwordBase(new RGToolMaterialSword()));
+        registerItem("rg_shovel", () -> new RGShovelBase(new RGToolMaterialShovel()));
+        registerItem("rg_pickaxe", () -> new RGPickaxeBase(new RGToolMaterialPickaxe()));
+        registerItem("rg_axe", () -> new RGAxeBase(new RGToolMaterialAxe()));
+        registerItem("rg_hoe", () -> new RGHoeBase(new RGToolMaterialHoe()));
+        registerItem("rg_sword", () -> new RGSwordBase(new RGToolMaterialSword()));
 
         //Artifacts
         //register("royal_sword", new RoyalSwordBase(new ToolMaterialSoldiersSpear()));

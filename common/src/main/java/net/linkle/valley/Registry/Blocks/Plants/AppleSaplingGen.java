@@ -10,6 +10,6 @@ import net.minecraft.world.gen.feature.TreeFeatureConfig;
 public class AppleSaplingGen extends SaplingGenerator {
 	@Override
 	protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random random, boolean bees) {
-		return (ConfiguredFeature<TreeFeatureConfig, ?>) Trees.APPLE_TREE;
+		return (ConfiguredFeature<TreeFeatureConfig, ?>) null; //TODO Trees.APPLE_TREE;
 	}
 }

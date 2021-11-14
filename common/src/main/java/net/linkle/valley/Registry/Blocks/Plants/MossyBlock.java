@@ -1,7 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Plants;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -26,9 +24,7 @@ public class MossyBlock extends OreBlock {
     public static final BooleanProperty MOSSY = BooleanProperty.of("mossy");
 
     public MossyBlock() {
-        super(FabricBlockSettings.of(Material.STONE)
-                .requiresTool()
-                .breakByTool(FabricToolTags.PICKAXES, 1)
+        super(Settings.of(Material.STONE)
                 .ticksRandomly()
                 .sounds(BlockSoundGroup.STONE)
                 .strength(3, 3f));
@@ -56,7 +52,7 @@ public class MossyBlock extends OreBlock {
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         BlockPos blockPos = pos.down();
         if (world.isAir(blockPos)) {
-            world.setBlockState(blockPos, MOSSY_VINE.getDefaultState());
+            world.setBlockState(blockPos, MOSSY_VINE.get().getDefaultState());
         }
 
         BlockPos blockPosTop = pos.up();

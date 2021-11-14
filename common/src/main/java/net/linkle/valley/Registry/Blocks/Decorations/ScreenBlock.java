@@ -2,7 +2,6 @@ package net.linkle.valley.Registry.Blocks.Decorations;
 
 import java.util.List;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.linkle.valley.Registry.Commons.HorizontalWithWaterBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -27,8 +26,7 @@ public class ScreenBlock extends HorizontalWithWaterBlock {
     private static final VoxelShape NORTH_SHAPE;
 
     public ScreenBlock() {
-        super(FabricBlockSettings.of(Material.METAL).nonOpaque()
-                .breakByHand(true)
+        super(Settings.of(Material.METAL).nonOpaque()
                 .sounds(BlockSoundGroup.METAL)
                 .strength(1f,5f));
         setDefaultState(stateManager.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));

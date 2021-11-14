@@ -30,7 +30,6 @@ import java.util.Iterator;
 import java.util.Random;
 
 import static net.linkle.valley.Registry.Initializers.FoodAndCooking.RICE_ITEM;
-import static net.linkle.valley.Registry.Initializers.FurnitureCont.PLANTER;
 
 public class RiceCropBlock extends PlantBlock implements Fertilizable {
     public static final IntProperty AGE;
@@ -44,7 +43,7 @@ public class RiceCropBlock extends PlantBlock implements Fertilizable {
 
     @Environment(EnvType.CLIENT)
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
-        return new ItemStack(RICE_ITEM);
+        return new ItemStack(RICE_ITEM.get());
     }
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -74,7 +73,7 @@ public class RiceCropBlock extends PlantBlock implements Fertilizable {
             return ActionResult.PASS;
         } else if (i > 1) {
             int j = 1 + world.random.nextInt(6);
-            dropStack(world, pos, new ItemStack(RICE_ITEM, j + (bl ? 1 : 0)));
+            dropStack(world, pos, new ItemStack(RICE_ITEM.get(), j + (bl ? 1 : 0)));
             world.playSound(null, pos, SoundEvents.ITEM_CROP_PLANT, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
             world.setBlockState(pos, state.with(AGE, 0), 2);
             return ActionResult.success(world.isClient);
@@ -131,7 +130,6 @@ public class RiceCropBlock extends PlantBlock implements Fertilizable {
                     blockState.isOf(Blocks.COARSE_DIRT) ||
                     blockState.isOf(Blocks.PODZOL) ||
                     blockState.isOf(Blocks.SAND) ||
-                    blockState.isOf(PLANTER) ||
                     blockState.isOf(Blocks.RED_SAND) ||
                     blockState.isOf(Blocks.CLAY)) {
                 BlockPos blockPos = pos.down();
@@ -160,7 +158,6 @@ public class RiceCropBlock extends PlantBlock implements Fertilizable {
                 block == Blocks.SAND ||
                 block == Blocks.RED_SAND ||
                 block == Blocks.PODZOL ||
-                block == PLANTER ||
                 block == Blocks.CLAY;
     }
 }

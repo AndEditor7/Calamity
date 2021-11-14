@@ -31,7 +31,7 @@ public class FurArmorMaterial implements ArmorMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(MiscItems.FUR_CLUMP);
+        return Ingredient.ofItems(MiscItems.FUR_CLUMP.get());
     }
 
     @Override

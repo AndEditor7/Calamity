@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
 	"valley:small_cactus", 
-	"valley:tumbleweed"
+	"valley:tumbleweed",
+	"valley:seaweed_block",
+	"valley:fiber_block"
   ]
 }

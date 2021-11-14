@@ -53,7 +53,7 @@ public class DuckEntity extends ChickenEntity {
 
     @Override
     public ChickenEntity createChild(ServerWorld serverWorld, PassiveEntity passiveEntity) {
-        return Entities.DUCK.create(serverWorld);
+        return null; //Entities.DUCK.create(serverWorld);
     }
 
     @Override
@@ -65,7 +65,7 @@ public class DuckEntity extends ChickenEntity {
             if (--duckEggLayTime <= 0) {
                 playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (random.nextFloat() - random.nextFloat()) * 0.2F + 1.0F);
                 duckEggLayTime = getRandomTime();
-                dropItem(MiscItems.DUCK_EGG);
+                dropItem(MiscItems.DUCK_EGG.get());
             }
             if (--dropFeatherTime <= 0) {
                 dropFeatherTime = getRandomTime();
@@ -76,17 +76,17 @@ public class DuckEntity extends ChickenEntity {
     
     @Override
     protected SoundEvent getAmbientSound() {
-        return Sounds.DUCK_QUACK;
+        return Sounds.DUCK_QUACK.get();
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource source) {
-        return Sounds.DUCK_QUACK;
+        return Sounds.DUCK_QUACK.get();
     }
 
     @Override
     protected SoundEvent getDeathSound() {
-        return Sounds.DUCK_QUACK;
+        return Sounds.DUCK_QUACK.get();
     }
     
     @Override

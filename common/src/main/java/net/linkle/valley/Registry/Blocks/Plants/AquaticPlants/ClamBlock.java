@@ -1,7 +1,18 @@
 package net.linkle.valley.Registry.Blocks.Plants.AquaticPlants;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.*;
+import java.util.Iterator;
+import java.util.Random;
+
+import org.jetbrains.annotations.Nullable;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockRenderType;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.FacingBlock;
+import net.minecraft.block.HorizontalFacingBlock;
+import net.minecraft.block.Material;
+import net.minecraft.block.ShapeContext;
+import net.minecraft.block.Waterloggable;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -20,10 +31,6 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.Iterator;
-import java.util.Random;
 
 public class ClamBlock extends FacingBlock implements Waterloggable {
     public static final BooleanProperty WATERLOGGED;
@@ -31,8 +38,7 @@ public class ClamBlock extends FacingBlock implements Waterloggable {
     public static final VoxelShape SHAPE;
 
     public ClamBlock() {
-        super(FabricBlockSettings.of(Material.NETHER_WOOD).nonOpaque()
-                .breakByHand(true)
+        super(Settings.of(Material.NETHER_WOOD).nonOpaque()
                 .sounds(BlockSoundGroup.NETHER_STEM)
                 .strength(0,0.1f));
         this.setDefaultState(this.stateManager.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));

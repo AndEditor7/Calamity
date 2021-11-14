@@ -1,7 +1,5 @@
 package net.linkle.valley.Registry.Blocks.Plants.Stumps;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
@@ -16,9 +14,8 @@ import static net.linkle.valley.Registry.Initializers.Plants.MOREL;
 public class MorelStumpBlock extends Block {
 
     public MorelStumpBlock() {
-        super(FabricBlockSettings.of(Material.WOOD)
-                .breakByTool(FabricToolTags.AXES)
-                .breakByHand(true).ticksRandomly()
+        super(Settings.of(Material.WOOD)
+                .ticksRandomly()
                 .sounds(BlockSoundGroup.WOOD).nonOpaque()
                 .strength(1, 1f));
     }
@@ -27,7 +24,7 @@ public class MorelStumpBlock extends Block {
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         BlockPos blockPosTop = pos.up();
         if (world.isAir(blockPosTop)) {
-            world.setBlockState(blockPosTop, MOREL.getDefaultState());
+            world.setBlockState(blockPosTop, MOREL.get().getDefaultState());
         }
     }
 }

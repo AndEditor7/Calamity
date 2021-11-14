@@ -17,18 +17,15 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
-import java.util.Iterator;
 import java.util.Random;
 
 import static net.linkle.valley.Registry.Initializers.Plants.MAIZE_CROP;
-import static net.linkle.valley.Registry.Initializers.FurnitureCont.PLANTER;
 
 public class MaizeCropBlock extends PlantBlock implements Fertilizable {
     public static final IntProperty AGE;
@@ -42,7 +39,7 @@ public class MaizeCropBlock extends PlantBlock implements Fertilizable {
 
     @Environment(EnvType.CLIENT)
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
-        return new ItemStack(MAIZE_CROP);
+        return new ItemStack(MAIZE_CROP.get());
     }
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -72,7 +69,7 @@ public class MaizeCropBlock extends PlantBlock implements Fertilizable {
             return ActionResult.PASS;
         } else if (i > 9) {
             int j = 3 + world.random.nextInt(3);
-            dropStack(world, pos, new ItemStack(MAIZE_CROP, j + (bl ? 1 : 0)));
+            dropStack(world, pos, new ItemStack(MAIZE_CROP.get(), j + (bl ? 1 : 0)));
             world.playSound(null, pos, SoundEvents.ITEM_CROP_PLANT, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
             world.setBlockState(pos, state.with(AGE, 7), 2);
             return ActionResult.success(world.isClient);
@@ -128,12 +125,9 @@ public class MaizeCropBlock extends PlantBlock implements Fertilizable {
                     blockState.isOf(Blocks.DIRT) ||
                     blockState.isOf(Blocks.COARSE_DIRT) ||
                     blockState.isOf(Blocks.PODZOL) ||
-                    blockState.isOf(PLANTER) ||
                     blockState.isOf(Blocks.SAND) ||
                     blockState.isOf(Blocks.RED_SAND) ||
                     blockState.isOf(Blocks.CLAY)) {
-                BlockPos blockPos = pos.down();
-                Iterator var6 = Direction.Type.HORIZONTAL.iterator();
                 return true;
             }
         }
@@ -150,7 +144,6 @@ public class MaizeCropBlock extends PlantBlock implements Fertilizable {
                 block == Blocks.SAND ||
                 block == Blocks.RED_SAND ||
                 block == Blocks.PODZOL ||
-                block == PLANTER ||
                 block == Blocks.CLAY;
     }
 }
