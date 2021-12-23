@@ -1,7 +1,5 @@
 package io.github.linkle.valleycraft.utils;
 
-import java.util.List;
-
 import io.github.linkle.valleycraft.ValleyMain;
 import net.minecraft.block.Block;
 import net.minecraft.fluid.Fluids;
@@ -15,6 +13,8 @@ import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.gen.decorator.PlacementModifier;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.PlacedFeature;
+
+import java.util.List;
 
 public class Util {
     public static Item register(String ID, Item item) {
@@ -45,6 +45,12 @@ public class Util {
         var identifier = new Identifier(ValleyMain.MOD_ID, id);
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, identifier, config);
         Registry.register(BuiltinRegistries.PLACED_FEATURE, identifier, place);
+        return RegistryKey.of(Registry.PLACED_FEATURE_KEY, identifier);
+    }
+
+    public static RegistryKey<PlacedFeature> register(String id, PlacedFeature placed) {
+        var identifier = new Identifier(ValleyMain.MOD_ID, id);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, identifier, placed);
         return RegistryKey.of(Registry.PLACED_FEATURE_KEY, identifier);
     }
 }

@@ -1,10 +1,11 @@
 package io.github.linkle.valleycraft.init;
 
+import io.github.linkle.valleycraft.blocks.AppleLeavesBlock;
 import io.github.linkle.valleycraft.blocks.cave.CrystalBlock;
 import io.github.linkle.valleycraft.blocks.cave.SpiderEggBlock;
-import io.github.linkle.valleycraft.blocks.plants.CactusBlock;
 import io.github.linkle.valleycraft.blocks.crops.MaizeCropBlock;
 import io.github.linkle.valleycraft.blocks.crops.RiceCropBlock;
+import io.github.linkle.valleycraft.blocks.plants.CactusBlock;
 import io.github.linkle.valleycraft.blocks.plants.Decorative.*;
 import io.github.linkle.valleycraft.blocks.plants.SaplingBlock;
 import io.github.linkle.valleycraft.blocks.plants.*;
@@ -139,8 +140,7 @@ public class Plants {
     public static final Block ORANGE_BEAUTY = new Plant();
 
     public static final SaplingBlock APPLE_SAPLING = new SaplingBlock(new AppleSaplingGen());
-    public static final Block APPLE_LEAVES = new LeavesBlock(Settings.copy(Blocks.OAK_LEAVES));
-    public static final Block APPLE_LEAVES_EMPTY = new LeavesBlock(Settings.copy(Blocks.OAK_LEAVES));
+    public static final Block APPLE_LEAVES = new AppleLeavesBlock(Settings.copy(Blocks.OAK_LEAVES));
 
     public static final Block SPIDER_EGG_BLOCK = new SpiderEggBlock(FabricBlockSettings.of(Material.CACTUS, MapColor.LIGHT_GRAY)
             .breakByHand(true).nonOpaque().luminance(3)
@@ -231,7 +231,6 @@ public class Plants {
         
         Util.registerWithItem("apple_sapling", APPLE_SAPLING, natureGroup);
         Util.registerWithItem("apple_leaves", APPLE_LEAVES, natureGroup);
-        Util.registerWithItem("apple_leaves_empty", APPLE_LEAVES_EMPTY, natureGroup);
 
         Util.registerWithItem("spider_egg", SPIDER_EGG_BLOCK, natureGroup);
     }
