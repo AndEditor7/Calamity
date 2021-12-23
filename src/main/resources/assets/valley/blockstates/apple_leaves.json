@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "has_apples=true": {
       "model": "valley:block/apple_leaves"
+    },
+    "has_apples=false": {
+      "model": "valley:block/apple_leaves_empty"
     }
   }
 }

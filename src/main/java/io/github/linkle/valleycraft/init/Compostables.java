@@ -21,7 +21,6 @@ public class Compostables {
         registerItem(Plants.HOLLY_BUSH, levelLow);
         registerItem(Plants.APPLE_SAPLING, levelLow);
         registerItem(Plants.APPLE_LEAVES, levelLow);
-        registerItem(Plants.APPLE_LEAVES_EMPTY, levelLow);
         registerItem(Plants.SMALL_CACTUS, levelLow);
         registerItem(Plants.FLOWERING_CACTUS, levelLow);
         registerItem(Plants.HERBS, levelLow);
@@ -63,7 +62,6 @@ public class Compostables {
         registerItem(Plants.HEDGE, levelMed);
         registerItem(Crops.MANDRAKE, levelMed);
         registerItem(Plants.TUMBLE_WEED, levelMed);
-        registerItem(Plants.APPLE_LEAVES_EMPTY, levelMed);
         registerItem(FoodAndCooking.WORM, levelMed);
 
         registerItem(MiscItems.MULCH, levelHigh);

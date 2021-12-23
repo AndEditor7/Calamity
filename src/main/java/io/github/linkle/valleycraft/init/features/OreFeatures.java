@@ -9,7 +9,6 @@ import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.block.Block;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome.Category;
-import net.minecraft.world.biome.Biome.Precipitation;
 import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
@@ -17,16 +16,12 @@ import net.minecraft.world.gen.decorator.CountPlacementModifier;
 import net.minecraft.world.gen.decorator.HeightRangePlacementModifier;
 import net.minecraft.world.gen.decorator.PlacementModifier;
 import net.minecraft.world.gen.decorator.SquarePlacementModifier;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.OreConfiguredFeatures;
-import net.minecraft.world.gen.feature.OreFeatureConfig;
-import net.minecraft.world.gen.feature.PlacedFeature;
-
-import static net.minecraft.block.Blocks.*;
+import net.minecraft.world.gen.feature.*;
 
 import java.util.ArrayList;
 import java.util.function.Predicate;
+
+import static net.minecraft.block.Blocks.*;
 
 public class OreFeatures {
     //overworld ores
@@ -83,8 +78,7 @@ public class OreFeatures {
         );
         
         var underground = GenerationStep.Feature.UNDERGROUND_ORES;
-        Predicate<BiomeSelectionContext> snowOnly;
-        snowOnly = context -> context.getBiome().getPrecipitation() == Precipitation.SNOW;
+        Predicate<BiomeSelectionContext> snowOnly = context -> context.getBiome().getTemperature() < 0F;
 
         //jungle ores
         if (blobsEnable) {

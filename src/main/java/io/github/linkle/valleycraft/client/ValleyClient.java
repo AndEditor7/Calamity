@@ -37,15 +37,6 @@ public class ValleyClient implements ClientModInitializer {
                 tintIndex == 1 ? 4764952 : -1,
                 APPLE_LEAVES
         );
-
-        ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) ->
-                tintIndex == 1 ? BiomeColors.getFoliageColor(view, pos) : -1,
-                APPLE_LEAVES_EMPTY
-        );
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) ->
-                tintIndex == 1 ? 4764952 : -1,
-                APPLE_LEAVES_EMPTY
-        );
     }
     
     private static void renderLayer() {
@@ -238,8 +229,6 @@ public class ValleyClient implements ClientModInitializer {
         culloutBlocks.add(STUMP_BROWN);
         culloutBlocks.add(STUMP_RED);
         culloutBlocks.add(STUMP_MOREL);
-
-        culloutBlocks.add(APPLE_LEAVES_EMPTY);
 
         culloutBlocks.add(CHAIN_C);
         culloutBlocks.add(CHAIN_G);

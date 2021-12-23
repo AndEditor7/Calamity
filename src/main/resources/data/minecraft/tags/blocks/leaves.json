@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "valley:apple_leaves",
-    "valley:apple_leaves_empty"
+    "valley:apple_leaves"
   ]
 }
