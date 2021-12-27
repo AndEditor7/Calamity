@@ -123,27 +123,17 @@ public class Furniture {
     public static final Block SEAWEED_BALE = new BaleBlock();
 
     //rope
-    public static final Block CLIMBABLE_ROPE = new ClimbableRopeBlock(FabricBlockSettings.of(Material.NETHER_WOOD).nonOpaque()
+    public static final Block CLIMBABLE_ROPE = new VChainBlock(FabricBlockSettings.of(Material.NETHER_WOOD).nonOpaque()
             .breakByHand(true)
             .sounds(BlockSoundGroup.NETHER_STEM)
             .strength(0,0.1f));
 
     //chain
-    public static final Block CHAIN_C = new ClimbableChainBlock(FabricBlockSettings.of(Material.NETHER_WOOD).nonOpaque()
-            .breakByHand(true)
-            .sounds(BlockSoundGroup.CHAIN)
-            .strength(1.5f,1.1f));
-    public static final Block CHAIN_G = new ClimbableChainBlock(FabricBlockSettings.of(Material.NETHER_WOOD).nonOpaque()
-            .breakByHand(true)
-            .sounds(BlockSoundGroup.CHAIN)
-            .strength(1.5f,1.1f));
-    public static final Block CHAIN_N = new ClimbableChainBlock(FabricBlockSettings.of(Material.NETHER_WOOD).nonOpaque()
-            .breakByHand(true)
-            .sounds(BlockSoundGroup.CHAIN)
-            .strength(1.5f,1.1f));
+    public static final Block CHAIN_C = new VChainBlock();
+    public static final Block CHAIN_G = new VChainBlock();
+    public static final Block CHAIN_N = new VChainBlock();
 
     //lantern
-
     public static final Block REDSTONE_LANTERN = new RedLanternBlock(FabricBlockSettings.of(Material.METAL).nonOpaque()
             .breakByHand(true)
             .sounds(BlockSoundGroup.CHAIN)
@@ -160,7 +150,7 @@ public class Furniture {
     public static final Block BEVELED_PANE_A_N = new BeveledGlassBlock();
 
     public static final Block MUG_BLOCK = new DishBlock();
-    public static final Block JAR_BLOCK = new DishBlock();
+    //public static final Block JAR_BLOCK = new DishBlock();
     public static final Block BENTO_BLOCK = new BentoBlock();
     public static final Block BOWL_BLOCK = new BowlBlock();
     public static final Block STEW_POT = new StewPotBlock();
@@ -171,7 +161,7 @@ public class Furniture {
     public static final Block SPIKE_WALL_BLOCK = new SpikeTrapBlock(FabricBlockSettings.of(Material.WOOD)
             .breakByHand(true)
             .sounds(BlockSoundGroup.WOOD)
-            .strength(1.5f, 1.5f));
+            .strength(0.5f, 1.0f));
 
     public static final Block ROUNDED_BARREL = new RoundedBarrelBlock();
     public static final Block SOUL_JACK = new JackBlock();
@@ -180,7 +170,7 @@ public class Furniture {
 
     public static final Block LANTERN_HANGING = new LanternBlock(15, false);
     public static final Block SOUL_HANGING = new LanternBlock(10, false);
-    public static final Block FAIRY_HANGING = new LanternBlock(15, false);
+    //public static final Block FAIRY_HANGING = new LanternBlock(15, false);
     public static final Block RED_HANGING = new LanternBlock(7, true);
 
     public static final Block CHIMNEY_COBBLE = new ChimneyBlock(FabricBlockSettings.of(Material.STONE)
@@ -208,7 +198,7 @@ public class Furniture {
 
     public static final Block KEG = new KegBlock();
 
-    public static final Block PET_BED = new PetBedBlock();
+    //public static final Block PET_BED = new PetBedBlock();
     public static final Block WREATH = new WreathBlock();
     public static final Block CREST = new CrestBlock();
 
