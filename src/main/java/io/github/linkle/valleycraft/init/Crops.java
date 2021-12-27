@@ -72,16 +72,10 @@ public class Crops {
         Util.register("mandrake", MANDRAKE);
         Util.register("cooked_mandrake", COOKED_MANDRAKE);
         //Crystal Fruit
-        //register("crystal_crop_block", CRYSTAL_CROP_BLOCK);
-        //register("crystal_seeds", CRYSTAL_SEEDS);
-        //register("crystal_fruit", CRYSTAL_FRUIT);
         //Foraged Items
         //Snow Yam
         Util.register("snow_yam_crop_block", SNOW_CROP_BLOCK);
         Util.register("snow_yam_item", SNOW_YAM_ITEM);
-        //Winter Root
-        //register("winter_root_crop_block", WINTER_CROP_BLOCK);
-        //register("winter_root_item", WINTER_ROOT_ITEM);
         //Miners Lettuce
         Util.register("miners_lettuce_crop_block", MINERS_CROP_BLOCK);
         Util.register("miners_lettuce", MINERS_LETTUCE_ITEM);

@@ -202,7 +202,6 @@ public class Plants {
 
         Util.registerWithItem("maize_crop", MAIZE_CROP, new Item.Settings().group(COOKING_GROUP).food(new FoodComponent.Builder().hunger(3).saturationModifier(0.6f).build()).maxCount(64));
 
-
         Util.registerWithItem("reeds", REED_BLOCK, natureGroup);
 
         Util.registerWithItem("rocks", ROCK_PILE, natureGroup);

@@ -2,7 +2,7 @@ package io.github.linkle.valleycraft.items.armorMaterials;
 
 import net.minecraft.entity.EquipmentSlot;
 
-interface ArmorMaterial extends net.minecraft.item.ArmorMaterial {
+public interface VArmorMaterial extends net.minecraft.item.ArmorMaterial {
     static final int[] BASE_DURABILITY = new int[] {13, 15, 16, 11};
     
     @Override

@@ -1,4 +1,4 @@
-package io.github.linkle.valleycraft.blocks.decorations.Furnaces;
+package io.github.linkle.valleycraft.blocks.decorations.furnaces;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.AbstractFurnaceBlockEntity;

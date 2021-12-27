@@ -9,17 +9,17 @@ import static io.github.linkle.valleycraft.init.ItemGroups.MISC_GROUP;
 public class FoodAndCooking {
     public static final Item DRIED_SALMON = new FoodItemBase(new Item.Settings(), 4, 0.4f);
     public static final Item DRIED_SARDINE = new FoodItemBase(new Item.Settings(), 3, 0.4f);
-    public static final Item COOKED_SARDINE = new FoodItemBase(new Item.Settings(), 4, 0.4f);
-    public static final Item COOKED_CRAB = new FoodItemBase(new Item.Settings(), 7, 0.4f);
+    public static final Item SARDINE_COOKED = new FoodItemBase(new Item.Settings(), 4, 0.4f);
+    public static final Item CRAB_RED_COOKED = new FoodItemBase(new Item.Settings(), 7, 0.4f);
     public static final Item COOKED_PERCH = new FoodItemBase(new Item.Settings(), 4, 0.4f);
-    public static final Item DRIED_FIRE_EEL = new FoodItemBase(new Item.Settings(), 3, 0.4f);
-    public static final Item COOKED_FIRE_EEL = new FoodItemBase(new Item.Settings(), 4, 0.4f);
+    public static final Item FIRE_EEL_DRIED = new FoodItemBase(new Item.Settings(), 3, 0.4f);
+    public static final Item FIRE_EEL_COOKED = new FoodItemBase(new Item.Settings(), 4, 0.4f);
     public static final Item PEPPERCORN = new FoodItemBase(new Item.Settings(), 1, 0.6f);
     public static final Item THYME = new FoodItemBase(new Item.Settings(), 1, 0.6f);
 
     public static final Item DRIED_COD = new FoodItemBase(new Item.Settings(), 4, 0.4f);
-    public static final Item DRIED_TROPICAL = new FoodItemBase(new Item.Settings(), 4, 0.4f);
-    public static final Item COOKED_TROPICAL = new FoodItemBase(new Item.Settings(), 5, 0.4f);
+    public static final Item DRIED_TROPICAL_FISH = new FoodItemBase(new Item.Settings(), 4, 0.4f);
+    public static final Item COOKED_TROPICAL_FISH = new FoodItemBase(new Item.Settings(), 5, 0.4f);
     public static final Item DRIED_SUCKER = new FoodItemBase(new Item.Settings(), 4, 0.4f);
     public static final Item RICE_ITEM = new FoodItemBase(new Item.Settings(), 3, 0.6f);
     public static final Item SEAWEED_ITEM = new FoodItemBase(new Item.Settings(), 4, 0.6f);
@@ -38,11 +38,11 @@ public class FoodAndCooking {
     public static final Item CLOWN_SALAD = new BowlBase(new Item.Settings(), 8, 0.6f, FoodStatusEffects.CLOWN_SALAD);
     public static final Item CAKE_SLICE = new FoodItemBase(new Item.Settings(), 2, 0.4f);
 
-    public static final Item RAW_EGGS = new BowlBase(new Item.Settings().maxCount(1), 1, 1.2f, FoodStatusEffects.RAW_EGGS);
+    public static final Item RAW_EGG_BOWL = new BowlBase(new Item.Settings().maxCount(1), 1, 1.2f, FoodStatusEffects.RAW_EGGS);
     public static final Item COOKED_EGG_BOWL = new BowlBase(new Item.Settings().maxCount(1), 5, 0.6f, true);
     public static final Item FRUIT_KABOB = new FoodItemBase(new Item.Settings(), 8, 0.6f);
-    public static final Item MOREL_KABOB = new FoodItemBase(new Item.Settings(), 8, 0.6f);
-    public static final Item GOLDEN_FRUIT_KABOB = new FoodItemBase(new Item.Settings(), 10, 0.6f);
+    public static final Item MOREL_SKEWER = new FoodItemBase(new Item.Settings(), 8, 0.6f);
+    public static final Item GOLDEN_KABOB = new FoodItemBase(new Item.Settings(), 10, 0.6f);
     public static final Item APPLE_JUICE = new DrinkBottleBase(new Item.Settings().maxCount(1), 4, 0.5f, FoodStatusEffects.APPLE_JUICE);
     public static final Item BEET_JUICE = new DrinkBottleBase(new Item.Settings().maxCount(1), 4, 0.5f, FoodStatusEffects.BEET_JUICE);
     public static final Item CARROT_JUICE = new DrinkBottleBase(new Item.Settings().maxCount(1), 4, 0.5f, FoodStatusEffects.CARROT_JUICE);
@@ -80,8 +80,8 @@ public class FoodAndCooking {
     public static final Item FIRE_EEL_ROLL = new FoodItemBase(new Item.Settings(), 6, 0.5f, FoodStatusEffects.FIRE_EEL_ROLL);
     public static final Item OCTO_ROLL = new FoodItemBase(new Item.Settings(), 6, 0.5f, FoodStatusEffects.OCTO_ROLL);
 
-    public static final Item SKELE_DOUGH = new FoodItemBase(new Item.Settings(), 1, 1f);
-    public static final Item SKELE_COOKIE = new FoodItemBase(new Item.Settings(), 4, 0.7f);
+    public static final Item SKELETON_COOKIE_DOUGH = new FoodItemBase(new Item.Settings(), 1, 1f);
+    public static final Item SKELETON_COOKIE = new FoodItemBase(new Item.Settings(), 4, 0.7f);
     public static final Item GLAZED_APPLE = new FoodItemBase(new Item.Settings(), 5, 0.7f);
 
     public static final Item BREAD_DOUGH = new FoodItemBase(new Item.Settings(), 1, 1f);
@@ -91,8 +91,8 @@ public class FoodAndCooking {
     public static final Item COOKED_BACON = new FoodItemBase(new Item.Settings(), 4, 0.5f, true);
     public static final Item PANCAKE = new FoodItemBase(new Item.Settings(), 5, 0.5f);
     public static final Item BB_DOUGH = new FoodItemBase(new Item.Settings(), 1, 1f);
-    public static final Item SB_DOUGH = new FoodItemBase(new Item.Settings(), 1, 1f);
-    public static final Item GB_DOUGH = new FoodItemBase(new Item.Settings(), 1, 1f);
+    public static final Item SWEET_DOUGH = new FoodItemBase(new Item.Settings(), 1, 1f);
+    public static final Item GLOW_DOUGH = new FoodItemBase(new Item.Settings(), 1, 1f);
 
     public static final Item AMERANTH_PANCAKE_DOUGH = new FoodItemBase(new Item.Settings(), 1, 1f, FoodStatusEffects.AMERANTH_PANCAKE_DOUGH);
     public static final Item AMERANTH_PANCAKE = new FoodItemBase(new Item.Settings(), 5, 0.5f, FoodStatusEffects.AMERANTH_PANCAKE);
@@ -126,7 +126,7 @@ public class FoodAndCooking {
     public static final Item JUICE_EG = new DrinkBottleBase(new Item.Settings(), 4, 0.5f);
     public static final Item COCOA = new DrinkTeaBase(new Item.Settings(), 2, 0.5f, FoodStatusEffects.COCOA);
     public static final Item CLOWNFISH_ROLL = new FoodItemBase(new Item.Settings(), 6, 0.5f, FoodStatusEffects.CLOWNFISH_ROLL);
-    public static final Item CRYS_HONEY = new FoodItemBase(new Item.Settings(), 4, 0.5f, FoodStatusEffects.CRYS_HONEY);
+    public static final Item CRYSTALIZED_HONEY = new FoodItemBase(new Item.Settings(), 4, 0.5f, FoodStatusEffects.CRYS_HONEY);
     public static final Item MAIZE_PORRIDGE = new BowlBase(new Item.Settings(), 10, 0.5f, FoodStatusEffects.MAIZE_PORRIDGE);
     public static final Item BEEF_STEW = new BowlBase(new Item.Settings(), 10, 0.5f, FoodStatusEffects.BEEF_STEW);
     public static final Item BEAR_STEW = new BowlBase(new Item.Settings(), 10, 0.5f, FoodStatusEffects.BEAR_STEW);
@@ -140,11 +140,11 @@ public class FoodAndCooking {
     public static final Item MONSTER_JERKY = new FoodItemBase(new Item.Settings(), 4, 0.4f, true);
     public static final Item GLOW_SOUP = new BowlBase(new Item.Settings(), 8, 0.7f, FoodStatusEffects.GLOW_SOUP);
     public static final Item BEAR_JERKY = new FoodItemBase(new Item.Settings(), 10, 0.4f, true);
-    public static final Item RAW_TENDER = new FoodItemBase(new Item.Settings(), 5, 0.4f, true);
-    public static final Item COOKED_TENDER = new FoodItemBase(new Item.Settings(), 8, 0.4f, true);
+    public static final Item RAW_TENDERLOIN = new FoodItemBase(new Item.Settings(), 5, 0.4f, true);
+    public static final Item COOKED_TENDERLOIN = new FoodItemBase(new Item.Settings(), 8, 0.4f, true);
 
     public static final Item PANCAKE_BREAKFAST = new BowlBase(new Item.Settings(), 8, 0.6f, FoodStatusEffects.PANCAKE_BREAKFAST);
-    public static final Item PANCAKE_BREAKFAST_LARGE = new BowlBase(new Item.Settings(), 10, 0.6f, FoodStatusEffects.PANCAKE_BREAKFAST_LARGE);
+    public static final Item LARGE_PANCAKE_BREAKFAST = new BowlBase(new Item.Settings(), 10, 0.6f, FoodStatusEffects.PANCAKE_BREAKFAST_LARGE);
     public static final Item FULL_BREAKFAST = new BowlBase(new Item.Settings(), 10, 0.6f, FoodStatusEffects.FULL_BREAKFAST);
     public static final Item BACON_AND_EGGS = new BowlBase(new Item.Settings(), 8, 0.6f, FoodStatusEffects.BACON_AND_EGGS);
     public static final Item DUMPLING = new FoodItemBase(new Item.Settings(), 8, 0.6f, FoodStatusEffects.DUMPLING);
@@ -154,7 +154,7 @@ public class FoodAndCooking {
     public static final Item DRUMSTICK = new FoodItemBase(new Item.Settings(), 4, 0.6f);
     public static final Item COOKED_APPLE = new FoodItemBase(new Item.Settings(), 6, 0.5f);
     public static final Item STUFFED_ONION = new FoodItemBase(new Item.Settings(), 9, 0.5f, true, FoodStatusEffects.STUFFED_ONION);
-    public static final Item BAKED_POTATO_SPECIAL= new FoodItemBase(new Item.Settings(), 9, 0.5f, FoodStatusEffects.BAKED_POTATO_SPECIAL);
+    public static final Item BAKED_POTATO = new FoodItemBase(new Item.Settings(), 9, 0.5f, FoodStatusEffects.BAKED_POTATO_SPECIAL);
     public static final Item WORM = new FoodItemBase(new Item.Settings(), 2, 0.6f);
 
     public static final Item DOG_BISCUIT= new FoodItemBase(new Item.Settings(), 8, 0.5f, true);
@@ -163,22 +163,22 @@ public class FoodAndCooking {
     public static final Item FOX_FOOD = new BowlBase(new Item.Settings(), 8, 0.6f, true, FoodStatusEffects.FOX_FOOD);
     public static final Item FOX_TREAT= new FoodItemBase(new Item.Settings(), 8, 0.5f, true);
 
-    public static final Item GOLDEN_BB = new FoodItemBase(new Item.Settings(), 10, 0.6f);
-    public static final Item GOLDEN_SB = new FoodItemBase(new Item.Settings(), 10, 0.6f);
-    public static final Item GOLDEN_SPB = new FoodItemBase(new Item.Settings(), 10, 0.6f);
-    public static final Item GOLDEN_P = new FoodItemBase(new Item.Settings(), 10, 0.6f);
-    public static final Item GOLDEN_B = new FoodItemBase(new Item.Settings(), 10, 0.6f);
-    public static final Item GOLDEN_O = new FoodItemBase(new Item.Settings(), 10, 0.6f);
-    public static final Item GOLDEN_C = new FoodItemBase(new Item.Settings(), 10, 0.6f);
-    public static final Item GOLDEN_SY = new FoodItemBase(new Item.Settings(), 10, 0.6f);
-    public static final Item GOLDEN_T = new FoodItemBase(new Item.Settings(), 10, 0.6f);
-    public static final Item GOLDEN_K = new FoodItemBase(new Item.Settings(), 10, 0.6f);
-    public static final Item GOLDEN_H = new FoodItemBase(new Item.Settings(), 10, 0.6f);
-    public static final Item GOLDEN_J = new DrinkBottleBase(new Item.Settings(), 10, 0.6f);
-    public static final Item GOLDEN_GB = new FoodItemBase(new Item.Settings(), 10, 0.6f);
-    public static final Item GOLDEN_M = new FoodItemBase(new Item.Settings(), 10, 0.6f);
-    public static final Item GOLDEN_EP = new FoodItemBase(new Item.Settings(), 10, 0.6f);
-    public static final Item GOLDEN_GB_2 = new FoodItemBase(new Item.Settings(), 10, 0.6f);
+    public static final Item GLISTERING_BITTER_BERRIES = new FoodItemBase(new Item.Settings(), 10, 0.6f);
+    public static final Item GLISTERING_SWEET_BERRIES = new FoodItemBase(new Item.Settings(), 10, 0.6f);
+    public static final Item GLISTERING_SPICY_BERRIES = new FoodItemBase(new Item.Settings(), 10, 0.6f);
+    public static final Item GLISTERING_POTATO = new FoodItemBase(new Item.Settings(), 10, 0.6f);
+    public static final Item GLISTERING_BEET = new FoodItemBase(new Item.Settings(), 10, 0.6f);
+    public static final Item GLISTERING_ONION = new FoodItemBase(new Item.Settings(), 10, 0.6f);
+    public static final Item GLISTERING_CORN = new FoodItemBase(new Item.Settings(), 10, 0.6f);
+    public static final Item GLISTERING_SNOW_YAM = new FoodItemBase(new Item.Settings(), 10, 0.6f);
+    public static final Item GLISTERING_TOMATO = new FoodItemBase(new Item.Settings(), 10, 0.6f);
+    public static final Item GLISTERING_KELP = new FoodItemBase(new Item.Settings(), 10, 0.6f);
+    public static final Item GLISTERING_HONEYCOMB = new FoodItemBase(new Item.Settings(), 10, 0.6f);
+    public static final Item GLISTERING_JUICE = new DrinkBottleBase(new Item.Settings(), 10, 0.6f);
+    public static final Item GLISTERING_GREEN_BEAN = new FoodItemBase(new Item.Settings(), 10, 0.6f);
+    public static final Item GLISTERING_MANDRAKE = new FoodItemBase(new Item.Settings(), 10, 0.6f);
+    public static final Item GLISTERING_EGGPLANT = new FoodItemBase(new Item.Settings(), 10, 0.6f);
+    public static final Item GLISTERING_GLOW_BERRIES = new FoodItemBase(new Item.Settings(), 10, 0.6f);
     public static final Item VEGE_STIR_FRY = new BowlBase(new Item.Settings(), 10, 0.4f, FoodStatusEffects.VEGE_STIR_FRY);
     public static final Item EGG_STIR_FRY = new BowlBase(new Item.Settings(), 10, 0.4f, FoodStatusEffects.EGG_STIR_FRY);
     public static final Item BEAR_STIR_FRY = new BowlBase(new Item.Settings(), 10, 0.4f, FoodStatusEffects.BEAR_STIR_FRY);
@@ -195,9 +195,9 @@ public class FoodAndCooking {
     public static final Item SWEET_PIE = new FoodItemBase(new Item.Settings(), 8, 0.5f);
     public static final Item GLOW_PIE = new FoodItemBase(new Item.Settings(), 8, 0.5f);
 
-    public static final Item G_WATER = new FoodItemBase(new Item.Settings(), 4, 0.5f);
-    public static final Item B_WATER = new FoodItemBase(new Item.Settings(), 8, 0.5f);
-    public static final Item GOLDEN_PE = new FoodItemBase(new Item.Settings(), 10, 0.6f);
+    public static final Item GRILLED_WATERMELON = new FoodItemBase(new Item.Settings(), 4, 0.5f);
+    public static final Item WATERMELON_FRUIT_BOWL = new FoodItemBase(new Item.Settings(), 8, 0.5f);
+    public static final Item GLISTERING_PEPPER = new FoodItemBase(new Item.Settings(), 10, 0.6f);
 
     public static void initialize() {
         Util.register("tea", TEA);
@@ -239,7 +239,6 @@ public class FoodAndCooking {
         Util.register("tomato_soup", TOMATO_SOUP);
         Util.register("carrot_stew", CARROT_STEW);
         Util.register("creamy_heart_stew", CREAMY_HEART_STEW);
-        //register("winter_root_stew", WINTER_ROOT_STEW);
         Util.register("bone_broth", BONE_BROTH);
         Util.register("nether_fungus_stew", NETHER_FUNGUS_STEW);
         Util.register("carrot_salad", CARROT_SALAD);
@@ -251,13 +250,11 @@ public class FoodAndCooking {
         Util.register("full_breakfast", FULL_BREAKFAST);
         Util.register("full_breakfast_vegetarian", FULL_BREAKFAST_VEGETARIAN);
         Util.register("pancake_breakfast", PANCAKE_BREAKFAST);
-        //register("ameranth_pancake_breakfast", AMERANTH_PANCAKE_BREAKFAST);
-        Util.register("large_pancake_breakfast", PANCAKE_BREAKFAST_LARGE);
+        Util.register("large_pancake_breakfast", LARGE_PANCAKE_BREAKFAST);
 
         Util.register("glow_soup", GLOW_SOUP);
         Util.register("clownfish_salad", CLOWN_SALAD);
         Util.register("maize_porridge", MAIZE_PORRIDGE);
-        //register("ameranth_porridge", AMERANTH_PORRIDGE);
         Util.register("beef_stew", BEEF_STEW);
         Util.register("bear_stew", BEAR_STEW);
         Util.register("rabbit_bigo", SPICY_RABBIT_BIGO);
@@ -284,14 +281,14 @@ public class FoodAndCooking {
         Util.register("grilled_sucker", GRILLED_SUCKER);
         Util.register("steamed_cod", STEAMED_COD);
         Util.register("dried_salmon", DRIED_SALMON);
-        Util.register("fire_eel_dried", DRIED_FIRE_EEL);
+        Util.register("fire_eel_dried", FIRE_EEL_DRIED);
         Util.register("dried_cod", DRIED_COD);
         Util.register("dried_sucker", DRIED_SUCKER);
-        Util.register("dried_tropical_fish", DRIED_TROPICAL);
-        Util.register("cooked_tropical_fish", COOKED_TROPICAL);
-        Util.register("sardine_cooked", COOKED_SARDINE);
-        Util.register("fire_eel_cooked", COOKED_FIRE_EEL);
-        Util.register("crab_red_cooked", COOKED_CRAB);
+        Util.register("dried_tropical_fish", DRIED_TROPICAL_FISH);
+        Util.register("cooked_tropical_fish", COOKED_TROPICAL_FISH);
+        Util.register("sardine_cooked", SARDINE_COOKED);
+        Util.register("fire_eel_cooked", FIRE_EEL_COOKED);
+        Util.register("crab_red_cooked", CRAB_RED_COOKED);
 
         Util.register("salmon_roll", SALMON_ROLL);
         Util.register("clownfish_roll", CLOWNFISH_ROLL);
@@ -311,26 +308,24 @@ public class FoodAndCooking {
         Util.register("apple_dough", APPLE_DOUGH);
         Util.register("pumpkin_dough", PUMPKIN_DOUGH);
         Util.register("bitter_dough", BB_DOUGH);
-        Util.register("glow_dough", GB_DOUGH);
-        Util.register("sweet_dough", SB_DOUGH);
+        Util.register("glow_dough", GLOW_DOUGH);
+        Util.register("sweet_dough", SWEET_DOUGH);
         Util.register("bread_dough", BREAD_DOUGH);
         Util.register("pancake_dough", PANCAKE_DOUGH);
-        //register("ameranth_pancake_dough", AMERANTH_PANCAKE_DOUGH);
-        Util.register("skeleton_cookie_dough", SKELE_DOUGH);
+        Util.register("skeleton_cookie_dough", SKELETON_COOKIE_DOUGH);
 
         Util.register("pancake", PANCAKE);
-        //register("ameranth_pancake", AMERANTH_PANCAKE);
         Util.register("apple_pie", APPLE_PIE);
         Util.register("bitter_pie", BITTER_PIE);
         Util.register("sweet_pie", SWEET_PIE);
         Util.register("glow_pie", GLOW_PIE);
 
         Util.register("cake_slice", CAKE_SLICE);
-        Util.register("skeleton_cookie", SKELE_COOKIE);
+        Util.register("skeleton_cookie", SKELETON_COOKIE);
 
 
         Util.register("honeycomb_chunk", HONEYCOMB_CHUNK);
-        Util.register("crystalized_honey", CRYS_HONEY);
+        Util.register("crystalized_honey", CRYSTALIZED_HONEY);
         Util.register("frozen_jelly", FROZEN_JELLY);
         Util.register("rock_candy", ROCK_CANDY);
         Util.register("candied_snow_yams", CANDIED_SNOW_YAM);
@@ -341,45 +336,43 @@ public class FoodAndCooking {
 
         Util.register("drumstick", DRUMSTICK);
         Util.register("stuffed_onion", STUFFED_ONION);
-        Util.register("baked_potato", BAKED_POTATO_SPECIAL);
+        Util.register("baked_potato", BAKED_POTATO);
         Util.register("dumpling", DUMPLING);
 
         Util.register("rice_item", RICE_ITEM);
         Util.register("raw_bacon", RAW_BACON);
         Util.register("cooked_bacon", COOKED_BACON);
-        Util.register("raw_egg_bowl", RAW_EGGS);
-        Util.register("raw_tenderloin", RAW_TENDER);
-        Util.register("cooked_tenderloin", COOKED_TENDER);
+        Util.register("raw_egg_bowl", RAW_EGG_BOWL);
+        Util.register("raw_tenderloin", RAW_TENDERLOIN);
+        Util.register("cooked_tenderloin", COOKED_TENDERLOIN);
         Util.register("bear_jerky", BEAR_JERKY);
 
         Util.register("salt", SALT);
-        //register("thyme", THYME);
-        //register("black_peppercorns", PEPPERCORN);
 
-        Util.register("watermelon_fruit_bowl", B_WATER);
-        Util.register("grilled_watermelon", G_WATER);
+        Util.register("watermelon_fruit_bowl", WATERMELON_FRUIT_BOWL);
+        Util.register("grilled_watermelon", GRILLED_WATERMELON);
 
-        Util.register("morel_skewer", MOREL_KABOB);
+        Util.register("morel_skewer", MOREL_SKEWER);
         Util.register("fruit_kabob", FRUIT_KABOB);
-        Util.register("golden_kabob", GOLDEN_FRUIT_KABOB);
+        Util.register("golden_kabob", GOLDEN_KABOB);
 
-        Util.register("glistering_juice", GOLDEN_J);
-        Util.register("glistering_honeycomb", GOLDEN_H);
-        Util.register("glistering_bitter_berries", GOLDEN_BB);
-        Util.register("glistering_sweet_berries", GOLDEN_SB);
-        Util.register("glistering_spicy_berries", GOLDEN_SPB);
-        Util.register("glistering_glow_berries", GOLDEN_GB_2);
-        Util.register("glistering_kelp", GOLDEN_K);
-        Util.register("glistering_tomato", GOLDEN_T);
-        Util.register("glistering_onion", GOLDEN_O);
-        Util.register("glistering_potato", GOLDEN_P);
-        Util.register("glistering_beet", GOLDEN_B);
-        Util.register("glistering_green_bean", GOLDEN_GB);
-        Util.register("glistering_mandrake", GOLDEN_M);
-        Util.register("glistering_corn", GOLDEN_C);
-        Util.register("glistering_snow_yam", GOLDEN_SY);
-        Util.register("glistering_pepper", GOLDEN_PE);
-        Util.register("glistering_eggplant", GOLDEN_EP);
+        Util.register("glistering_juice", GLISTERING_JUICE);
+        Util.register("glistering_honeycomb", GLISTERING_HONEYCOMB);
+        Util.register("glistering_bitter_berries", GLISTERING_BITTER_BERRIES);
+        Util.register("glistering_sweet_berries", GLISTERING_SWEET_BERRIES);
+        Util.register("glistering_spicy_berries", GLISTERING_SPICY_BERRIES);
+        Util.register("glistering_glow_berries", GLISTERING_GLOW_BERRIES);
+        Util.register("glistering_kelp", GLISTERING_KELP);
+        Util.register("glistering_tomato", GLISTERING_TOMATO);
+        Util.register("glistering_onion", GLISTERING_ONION);
+        Util.register("glistering_potato", GLISTERING_POTATO);
+        Util.register("glistering_beet", GLISTERING_BEET);
+        Util.register("glistering_green_bean", GLISTERING_GREEN_BEAN);
+        Util.register("glistering_mandrake", GLISTERING_MANDRAKE);
+        Util.register("glistering_corn", GLISTERING_CORN);
+        Util.register("glistering_snow_yam", GLISTERING_SNOW_YAM);
+        Util.register("glistering_pepper", GLISTERING_PEPPER);
+        Util.register("glistering_eggplant", GLISTERING_EGGPLANT);
 
         Util.register("dog_biscuit", DOG_BISCUIT);
         Util.register("dog_food", DOG_FOOD);

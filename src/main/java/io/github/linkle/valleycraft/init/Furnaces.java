@@ -1,9 +1,9 @@
-package io.github.linkle.valleycraft.blocks.decorations.Furnaces;
-
-import static io.github.linkle.valleycraft.init.ItemGroups.FURNITURE_GROUP;
+package io.github.linkle.valleycraft.init;
 
 import io.github.linkle.valleycraft.ValleyMain;
-import 	net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import io.github.linkle.valleycraft.blocks.decorations.furnaces.BrickFurnace;
+import io.github.linkle.valleycraft.blocks.decorations.furnaces.BrickFurnaceBlockEntity;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
@@ -13,6 +13,8 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+import static io.github.linkle.valleycraft.init.ItemGroups.FURNITURE_GROUP;
+
 public class Furnaces {
 	public static final Block BRICK_FURNACE = new BrickFurnace(FabricBlockSettings.of(Material.STONE)
 	        .requiresTool()
@@ -20,7 +22,7 @@ public class Furnaces {
 			.luminance(7)
 			.strength(1.5f, 2f));
 	
-	public static void ints() {
+	public static void initialize() {
 		var identity = new Identifier(ValleyMain.MOD_ID, "brick_furnace");
 	    Registry.register(Registry.BLOCK, identity, BRICK_FURNACE);
 	    Registry.register(Registry.ITEM, identity, new BlockItem(BRICK_FURNACE, new BlockItem.Settings().group(FURNITURE_GROUP)));

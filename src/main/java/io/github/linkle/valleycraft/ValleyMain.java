@@ -1,8 +1,6 @@
 package io.github.linkle.valleycraft;
 
-import io.github.linkle.valleycraft.blocks.decorations.Furnaces.Furnaces;
 import io.github.linkle.valleycraft.config.VConfig;
-import io.github.linkle.valleycraft.criterions.VCriteria;
 import io.github.linkle.valleycraft.init.*;
 import io.github.linkle.valleycraft.init.features.*;
 import me.shedaniel.autoconfig.AutoConfig;
@@ -19,14 +17,12 @@ public class ValleyMain implements ModInitializer {
     public static VConfig CONFIG;
 
     @Override
-    @SuppressWarnings("unused")
     public void onInitialize() {
         AutoConfig.register(VConfig.class, JanksonConfigSerializer::new);
         CONFIG = AutoConfig.getConfigHolder(VConfig.class).getConfig();
 
         // This should stay first before items and blocks.
-        Object initializer1 = VItemTags.KNIVES; // will force the class to load (any static member will do)
-        Object initializer2 = VCriteria.BROKE_BLOCK;
+        VItemTags.initialize();
 
         //Item Initializers
         FoodAndCooking.initialize();
@@ -34,6 +30,7 @@ public class ValleyMain implements ModInitializer {
         ItemGroups.initialize();
         WeaponsAndTools.initialize();
         MiscItems.initialize();
+        VArmorMaterials.initialize();
         Armors.initialize();
 
         //Block Initializers
@@ -43,7 +40,7 @@ public class ValleyMain implements ModInitializer {
         Aquatic.initialize();
         Crops.initialize();
         StoneBlocks.initialize();
-        Furnaces.ints();
+        Furnaces.initialize();
         PotBlock.initialize();
         
         // Misc Initializers (Recommended put it after the blocks and items initializers)
@@ -65,7 +62,7 @@ public class ValleyMain implements ModInitializer {
         //CavePlantConfiguredFeatures.initialize();
         //WaterPlantConfiguredFeatures.initialize();
 
-        //Tells you if this shit actually worked
+        //Tells you if this actually worked
         LOGGER.info("The main mod initialization sections loaded fine somehow.");
     }
 }

@@ -1,10 +1,10 @@
 package io.github.linkle.valleycraft.init;
 
-import static net.fabricmc.fabric.api.tag.TagFactory.ITEM;
-
 import net.minecraft.item.Item;
 import net.minecraft.tag.Tag;
 import net.minecraft.util.Identifier;
+
+import static net.fabricmc.fabric.api.tag.TagFactory.ITEM;
 
 public class VItemTags {
 
@@ -35,7 +35,10 @@ public class VItemTags {
     public static final Tag<Item> WORMS = ITEM.create(newId("worms"));
     public static final Tag<Item> HOLLY = ITEM.create(newId("holly"));
     public static final Tag<Item> EGGPLANTS = ITEM.create(newId("eggplants"));
-    
+
+    //This is here to be able to initialize these before their actually used
+    public static void initialize() {}
+
     // valley tags
     // use ValleyMain.MOD_ID for namespace
 
