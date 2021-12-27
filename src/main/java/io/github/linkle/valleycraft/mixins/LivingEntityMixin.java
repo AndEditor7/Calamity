@@ -1,14 +1,6 @@
 package io.github.linkle.valleycraft.mixins;
 
-import java.util.function.Predicate;
-
 import io.github.linkle.valleycraft.items.OneOffs.ClimbingAxeBase;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
@@ -20,6 +12,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.World;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.function.Predicate;
 
 @Mixin(LivingEntity.class)
 abstract class LivingEntityMixin extends Entity {
@@ -31,19 +30,19 @@ abstract class LivingEntityMixin extends Entity {
     }
 
     @Shadow
-    abstract boolean isHolding(Predicate<ItemStack> item);
+    public abstract boolean isHolding(Predicate<ItemStack> item);
 
     @Shadow
-    abstract void swingHand(Hand hand);
+    public abstract void swingHand(Hand hand);
 
     @Shadow
-    abstract ItemStack getMainHandStack();
+    public abstract ItemStack getMainHandStack();
     
     @Shadow
-    abstract ItemStack getOffHandStack();
+    public abstract ItemStack getOffHandStack();
     
     @Shadow
-    abstract void sendEquipmentBreakStatus(EquipmentSlot slot);
+    public abstract void sendEquipmentBreakStatus(EquipmentSlot slot);
     
     @Inject(method = "isClimbing", at = @At("HEAD"), cancellable = true)
     void climbingAxe(CallbackInfoReturnable<Boolean> info) {
@@ -56,7 +55,7 @@ abstract class LivingEntityMixin extends Entity {
                 var mutable = new BlockPos.Mutable();
                 var bool = horizontalCollision;
                 
-                if (!bool) loops : 
+                if (!bool) loops :
                 for(int x = minPos.getX(); x <= maxPos.getX(); ++x)
                 for(int y = minPos.getY(); y <= maxPos.getY(); ++y)
                 for(int z = minPos.getZ(); z <= maxPos.getZ(); ++z) {
