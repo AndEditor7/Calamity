@@ -4,11 +4,11 @@
   "package": "io.github.linkle.valleycraft.mixins",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-	"LivingEntityMixin",
 	"CriteriaInvoker",
-	"ItemSettingsAccessor"
+	"ItemSettingsAccessor",
+	"LivingEntityMixin"
   ],
   "injectors": {
-    "defaultRequire": 1
+	"defaultRequire": 1
   }
 }
